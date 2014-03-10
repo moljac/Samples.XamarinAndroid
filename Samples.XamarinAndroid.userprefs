@@ -10,4 +10,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Location MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Debug="0019bdba36148e" />
+  <MonoDevelop.Ide.ItemProperties.AppicationObject AndroidDeviceId-Debug="emulator-5554" />
 </Properties>
