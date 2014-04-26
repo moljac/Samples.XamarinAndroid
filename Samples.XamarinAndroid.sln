@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location", "Location\Locati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppicationObject", "AppicationObject\AppicationObject.csproj", "{EE831158-0772-4493-A5FF-EF11E0C075A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced.JavaBindingLibraries", "Advanced.JavaBindingLibraries\Advanced.JavaBindingLibraries.csproj", "{8DECF48E-84FB-4122-B4BF-49657A4ED90F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{EE831158-0772-4493-A5FF-EF11E0C075A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE831158-0772-4493-A5FF-EF11E0C075A5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE831158-0772-4493-A5FF-EF11E0C075A5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8DECF48E-84FB-4122-B4BF-49657A4ED90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DECF48E-84FB-4122-B4BF-49657A4ED90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DECF48E-84FB-4122-B4BF-49657A4ED90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DECF48E-84FB-4122-B4BF-49657A4ED90F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
