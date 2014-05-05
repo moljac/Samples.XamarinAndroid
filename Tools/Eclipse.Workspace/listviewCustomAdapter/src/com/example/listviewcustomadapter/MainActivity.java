@@ -1,27 +1,80 @@
 package com.example.listviewcustomadapter;
 
+import java.util.ArrayList;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends 
+			//ActionBarActivity 
+			Activity
+{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		/*
+		 * not using fragments
+		 *
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		*/
+		
+	    String[] values = new String[] { "SPA", "IAMU", "MAUI", "APS" };
+
+	    final ListView listview = (ListView) findViewById(R.id.listview);
+	    
+	    final ArrayList<String> list = new ArrayList<String>();
+	    for (int i = 0; i < values.length; ++i) {
+	      list.add(values[i]);
+	    }
+
+	    final CustomAdapter adapter = 
+	    		new CustomAdapter
+	    			(
+	    					this
+	    			//, android.R.layout.simple_list_item_1
+	    			, values
+	    			);
+	        listview.setAdapter(adapter);
+	
+	        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+	            @Override
+	            public void onItemClick(AdapterView<?> parent, final View view,
+	                int position, long id) {
+	              final String item = (String) parent.getItemAtPosition(position);
+	              view
+	              	.animate()	// API level 12
+	              	.setDuration(2000).alpha(0)
+	                  .withEndAction // API leve 16
+	                  (new Runnable() {
+	                    @Override
+	                    public void run() {
+	                      list.remove(item);
+	                      adapter.notifyDataSetChanged();
+	                      view.setAlpha(1);
+	                    }
+	                  });
+	            }
+
+	          });
+	
 	}
 
 	@Override
