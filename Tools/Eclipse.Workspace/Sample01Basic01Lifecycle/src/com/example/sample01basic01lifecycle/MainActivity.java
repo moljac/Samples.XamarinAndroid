@@ -1,22 +1,10 @@
 package com.example.sample01basic01lifecycle;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends 
+		ActionBarActivity 
+		//Activity
+	{
 
 	Button buttonNavigationSimple = null;
 	Button buttonNavigationComplex = null;
@@ -26,7 +14,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState == null) {
+                if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
