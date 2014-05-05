@@ -17,6 +17,7 @@ public class HelperActivity extends Activity{
 			//-----------------------------------------------
 
 		   	//-----------------------------------------------
+			// loading UI (layouts)
 	        setContentView(R.layout.activity_helper);
 			//-----------------------------------------------
 	        
@@ -30,15 +31,21 @@ public class HelperActivity extends Activity{
 	        String message2 = MainActivity.data_class_level;
 			//-----------------------------------------------
 
+			//-----------------------------------------------
+			// getting Widget objects
 	        Button buttonBack = (Button) findViewById(R.id.buttonBack);
 	        TextView textViewDataFromClass = (TextView) findViewById(R.id.textViewDataFromClass);
 	        TextView textViewDataFromIntent = (TextView) findViewById(R.id.textViewDataFromIntent);
+			//-----------------------------------------------
 
+			//-----------------------------------------------
+			// working with Widget objects
 	        if (message1 != null)
 	        {
 	        textViewDataFromClass.setText(message1);
 	        }
 	        textViewDataFromIntent.setText(message2);
+			//-----------------------------------------------
 	        
 	    	Log.e("LIFECYCLE = ", this.getClass().toString() + ".onCreate");
 	    	return;
