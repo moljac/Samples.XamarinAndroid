@@ -145,3 +145,4 @@ local.properties
 # TeXlipse plugin
 .texlipse
 #===================================================================================
+/Tools/Eclipse.Workspace/*.DS_Store

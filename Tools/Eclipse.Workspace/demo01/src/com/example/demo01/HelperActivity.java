@@ -22,6 +22,13 @@ public class HelperActivity extends Activity{
 			//-----------------------------------------------
 	        
 			//-----------------------------------------------
+			// getting Widget objects
+	        Button buttonBack = (Button) findViewById(R.id.buttonBack);
+	        TextView textViewDataFromClass = (TextView) findViewById(R.id.textViewDataFromClass);
+	        TextView textViewDataFromIntent = (TextView) findViewById(R.id.textViewDataFromIntent);
+			//-----------------------------------------------
+
+	        //-----------------------------------------------
 	        // extracting data from intent
 	        String message1 = this.getIntent().getStringExtra("Data");
 			//-----------------------------------------------
@@ -29,13 +36,6 @@ public class HelperActivity extends Activity{
 			//-----------------------------------------------
 	        // extracting data from class
 	        String message2 = MainActivity.data_class_level;
-			//-----------------------------------------------
-
-			//-----------------------------------------------
-			// getting Widget objects
-	        Button buttonBack = (Button) findViewById(R.id.buttonBack);
-	        TextView textViewDataFromClass = (TextView) findViewById(R.id.textViewDataFromClass);
-	        TextView textViewDataFromIntent = (TextView) findViewById(R.id.textViewDataFromIntent);
 			//-----------------------------------------------
 
 			//-----------------------------------------------

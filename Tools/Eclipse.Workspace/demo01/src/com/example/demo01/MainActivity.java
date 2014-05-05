@@ -50,7 +50,7 @@ public class MainActivity extends
 		//-----------------------------------------------
 		
 
-		// Touch/Click Event programmaticaly 
+		// Touch/Click Event programmatically 
 		// not using attribute in xml layout
 		buttonNavigationComplex.setOnClickListener(new View.OnClickListener() {
 		    @Override
@@ -75,23 +75,33 @@ public class MainActivity extends
     	
     	return;
     }
-    
+ 
+    // object for passing data on class/object level (public, or with methods)
     public static String data_class_level = "";
     
     public void navigateComplex(View v)
     {
     	String data = 
     			//"data sent from main activity"
-    			this.editTextDataToSend.getText().toString().concat(" - Intent");
+    			this.editTextDataToSend.getText().toString().concat(" - Intent")
     			;
     		
 		//-----------------------------------------------
+    	// Intent for passing data
     	Intent intent = new Intent(this, HelperActivity.class);
     	intent.putExtra("Data", data);
     	intent.putExtra("Broj", 1.0);
     	this.startActivity(intent);
 		//-----------------------------------------------
     	
+		//-----------------------------------------------
+    	// class object for passing data
+    	data_class_level = 
+    			// ""
+    			this.editTextDataToSend.getText().toString().concat(" - Class")
+    			;
+		//-----------------------------------------------
+
     	return;
     }
 
