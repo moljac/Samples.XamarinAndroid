@@ -108,10 +108,27 @@ Backup*/
 UpgradeLog*.XML
 
 
-/*.DS_Store
+
+#==============================================================================
+# HolisticWare
+
+**/.DS_Store
+**/.svn
+docs/workspace/sharpen/**
+**/*.userprefs
+src/samples/Components/**
+**/Components/
+**/packages/
+**/.git*
+**/.git.*/*
+
+**/UpgradeLog.htm
 
 
-#===================================================================================
+**/*.data.bat
+**/*.data.sh
+
+#.....................................................
 # HolisticWare Eclipse
 
 *.pydevproject
