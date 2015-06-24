@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PrinterDemo</string>
+    <string name="str_checkdevice">CheckDevice</string>
+    <string name="str_open">open</string>
+    <string name="str_close">close</string>
+    <string name="str_matched">Matched</string>
+    <string name="str_openimg">OpenImage</string>
+    <string name="str_create2d">Create2d</string>
+    <string name="str_createbar">CreateBar</string>
+    <string name="str_order">SendOrder</string>
+    <string name="str_scan">Scan</string>
+    <string name="str_printword">PrintWords</string>
+    <string name="str_printimg">PrintImage</string>
+    <string name="str_disconnect">Disconnected</string>
+    <string name="str_device">BlueToothDevice</string>
+    <string name="str_scaning">Scaning</string>
+    <string name="str_unconnected">UnConnected!</string>
+    <string name="str_succonnect">Success Connected!</string>
+    <string name="str_faileconnect">Faile Connected!</string>
+    <string name="str_lose">Connection Lose!</string>
+    <string name="str_cannotcreate2d">Can Not Create two-dimension code! </string>
+    <string name="str_cannotcreatebar">Can Not Create Barcode</string>
+    <string name="str_devecehasblue">This device has a bluetooth device!</string>
+    <string name="str_nomatched">No matching equipment!</string>
+    <string name="str_connected">Connected</string>
+    <string name="str_disconnected">No Connect</string>
+    <string name="str_connecting">Connecting</string>
+    <string name="str_hasnodevice">No bluetooth device!</string>
+    <string name="str_scanover">Scanning Complete!</string>
+   
+</resources>
