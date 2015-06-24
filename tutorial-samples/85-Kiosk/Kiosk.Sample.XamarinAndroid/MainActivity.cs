@@ -9,9 +9,10 @@ using Android.OS;
 namespace Kiosk.Sample.XamarinAndroid
 {
 	[Activity(Label = "Kiosk.Sample.XamarinAndroid", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
+	public class MainActivity : KioskActivity
 	{
-		int count = 1;
+		Button buttonMusicPlayer = null;
+		Button buttonBrowser = null;
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -22,9 +23,27 @@ namespace Kiosk.Sample.XamarinAndroid
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.MyButton);
+			buttonMusicPlayer = FindViewById<Button>(Resource.Id.buttonMusicPlayer);
+			buttonBrowser = FindViewById<Button>(Resource.Id.buttonBrowser);
 
-			button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+			buttonBrowser.Click += ButtonBrowser_Click;
+			buttonMusicPlayer.Click += ButtonMusicPlayer_Click;
+
+			return;
+		}
+
+		void ButtonMusicPlayer_Click (object sender, EventArgs e)
+		{
+			Toast.MakeText(this, "Play Music", ToastLength.Long).Show();
+
+			return;
+		}
+
+		void ButtonBrowser_Click (object sender, EventArgs e)
+		{
+			Toast.MakeText(this, "Open Browser", ToastLength.Long).Show();
+
+			return;
 		}
 	}
 }

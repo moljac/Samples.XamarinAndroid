@@ -1,6 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiosk.Sample.XamarinAndroid", "Kiosk.Sample.XamarinAndroid\Kiosk.Sample.XamarinAndroid.csproj", "{ACD69CB2-3E4F-4F51-924E-1927C4B698FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiosk", "Kiosk.XamarinAndroid\Kiosk.csproj", "{0EBE7C40-E951-484A-8721-40D4A9E14BB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EBE7C40-E951-484A-8721-40D4A9E14BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBE7C40-E951-484A-8721-40D4A9E14BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBE7C40-E951-484A-8721-40D4A9E14BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBE7C40-E951-484A-8721-40D4A9E14BB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ACD69CB2-3E4F-4F51-924E-1927C4B698FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACD69CB2-3E4F-4F51-924E-1927C4B698FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACD69CB2-3E4F-4F51-924E-1927C4B698FB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
