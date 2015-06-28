@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Kiosk.Sample.XamarinAndroid
+namespace Kiosk
 {
 	[Application]
 	public class KioskApplication : Android.App.Application

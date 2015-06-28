@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Kiosk.Sample.XamarinAndroid
+namespace Kiosk
 {
 	[Activity (Label = "KioskActivity")]			
 	public class KioskActivity : Activity

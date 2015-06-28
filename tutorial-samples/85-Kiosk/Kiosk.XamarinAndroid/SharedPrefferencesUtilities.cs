@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kiosk.Sample.XamarinAndroid
+namespace Kiosk
 {
 	public partial class SharedPrefferencesUtilities
 	{

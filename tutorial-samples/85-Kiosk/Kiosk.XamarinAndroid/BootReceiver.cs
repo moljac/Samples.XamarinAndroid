@@ -9,7 +9,7 @@
 							)
 ]
 
-namespace Kiosk.Sample.XamarinAndroid
+namespace Kiosk
 {
 
 

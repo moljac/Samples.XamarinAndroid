@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
-
-namespace Kiosk.Sample.XamarinAndroid
+namespace Kiosk
 {
 	/// <summary>
 	/// Kiosk service.

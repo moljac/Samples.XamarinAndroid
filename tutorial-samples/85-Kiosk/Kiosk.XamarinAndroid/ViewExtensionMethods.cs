@@ -1,4 +1,4 @@
-﻿namespace Kiosk.Sample.XamarinAndroid
+﻿namespace Kiosk
 {
 	public static partial class ViewExtensionMethods 
 	{

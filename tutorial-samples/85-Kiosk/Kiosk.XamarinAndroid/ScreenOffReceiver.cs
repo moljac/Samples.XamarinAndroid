@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kiosk.Sample.XamarinAndroid
+namespace Kiosk
 {
 	[Android.Content.BroadcastReceiver]
 	public class ScreenOffReceiver : Android.Content.BroadcastReceiver
