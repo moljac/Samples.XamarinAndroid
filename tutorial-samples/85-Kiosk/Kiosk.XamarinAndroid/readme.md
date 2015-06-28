@@ -50,6 +50,10 @@
 * [http://sdgsystems.com/blog/implementing-kiosk-mode-android-part-3-android-lollipop/](http://sdgsystems.com/blog/implementing-kiosk-mode-android-part-3-android-lollipop/)
 * []()
 
+
+
+https://forums.xamarin.com/discussion/426/persistant-app
+
 ## Authors 
 
 *	leon s

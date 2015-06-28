@@ -30,6 +30,37 @@ namespace Kiosk.Sample.XamarinAndroid
 							WindowManagerFlags.DismissKeyguard
 						);
 
+
+			/*
+			----------------------------------------------------------------------------------
+			It is also very easy to keep the screen bright as long as the app is 
+			visible (also forever). Add the following flag to your root layout:
+
+			android:keepScreenOn="true"
+
+			<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:id="@+id/myActivityRootLayout"
+			  android:layout_width="match_parent" 
+			  android:layout_height="match_parent"
+			  android:keepScreenOn="true"
+			  >
+			  
+			  <!-- your layout -->
+			  
+			</RelativeLayout>
+			----------------------------------------------------------------------------------
+			*/
+			Window.AddFlags
+				(
+					Android.Views.WindowManagerFlags.KeepScreenOn
+					|
+	                Android.Views.WindowManagerFlags.DismissKeyguard
+	                |
+	                Android.Views.WindowManagerFlags.ShowWhenLocked
+	                |
+	                Android.Views.WindowManagerFlags.TurnScreenOn
+				);      
+
 			return;
 		}
 
