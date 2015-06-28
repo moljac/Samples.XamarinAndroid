@@ -49,7 +49,9 @@
     <Compile Include="KioskActivity.cs" />
     <Compile Include="KioskApplication.cs" />
     <Compile Include="ScreenOffReceiver.cs" />
-    <Compile Include="KioskService.cs" />
+    <Compile Include="KioskActivityRestartService.cs" />
+    <Compile Include="SharedPrefferencesUtilities.cs" />
+    <Compile Include="ViewExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -14,13 +14,16 @@ namespace Kiosk.Sample.XamarinAndroid
 	///		immediately.
 	/// </summary>
 	[Android.App.Service]
-	public class KioskService : Android.App.Service
+	public class KioskActivityRestartService<ActivityType> 
+		: 
+		Android.App.Service 
+		where ActivityType : Android.App.Activity
+
 	{
 
 		private static long INTERVAL = Java.Util.Concurrent.TimeUnit.Seconds.ToMillis(2); 
 		// periodic interval to check in seconds -> 2 seconds
-		private static string TAG = typeof(KioskService).Name;
-		private static string PREF_KIOSK_MODE = "pref_kiosk_mode";
+		private static string TAG = typeof(KioskActivityRestartService<ActivityType>).Name;
 
 		private Java.Lang.Thread t = null;
 		private Android.Content.Context ctx = null;
@@ -36,12 +39,12 @@ namespace Kiosk.Sample.XamarinAndroid
 			return;
 		}
 
-		public override Android.App.StartCommandResult  OnStartCommand
-															(
-																Android.Content.Intent intent, 
-																Android.App.StartCommandFlags flags, 
-																int startId
-															) 
+		public override Android.App.StartCommandResult OnStartCommand
+														(
+															Android.Content.Intent intent, 
+															Android.App.StartCommandFlags flags, 
+															int startId
+														) 
 		{
 			Android.Util.Log.Info(TAG, "Starting service 'KioskService'");
 			running = true;
@@ -75,7 +78,7 @@ namespace Kiosk.Sample.XamarinAndroid
 		private void HandleKioskMode() 
 		{
 			// is Kiosk Mode active? 
-			if(IsKioskModeActive()) 
+			if(SharedPrefferencesUtilities.IsKioskModeActive(ctx)) 
 			{
 				// is App in background?
 				if(IsInBackground()) 
@@ -93,29 +96,22 @@ namespace Kiosk.Sample.XamarinAndroid
 					(Android.App.ActivityManager) 
 						ctx.GetSystemService(Android.Content.Context.ActivityService);
 
-		List<Android.App.ActivityManager.RunningTaskInfo> taskInfo = null;
+			List<Android.App.ActivityManager.RunningTaskInfo> taskInfo = null;
 
-		taskInfo = am.GetRunningTasks(1);
-		Android.Content.ComponentName componentInfo = null;
-		componentInfo =  taskInfo.Get(0).TopActivity;
-		return (!ctx.getApplicationContext().getPackageName().equals(componentInfo.getPackageName()));
+			taskInfo = (List<Android.App.ActivityManager.RunningTaskInfo>) am.GetRunningTasks(1);
+			Android.Content.ComponentName componentInfo = null;
+			componentInfo =  taskInfo[0].TopActivity;
+
+			return (!ctx.ApplicationContext.PackageName.Equals(componentInfo.PackageName));
 		}
 
 		private void RestoreApp() 
 		{
 			// Restart activity
-			Android.Content.Intent i = new Android.Content.Intent(ctx, typeof(MyActivity));
-			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			ctx.startActivity(i);
-		}
+			Android.Content.Intent i = new Android.Content.Intent(ctx, typeof(ActivityType));
+			i.AddFlags(Android.Content.ActivityFlags.NewTask);
+			ctx.StartActivity(i);
 
-		public bool IsKioskModeActive
-						(
-						//Android.Content.Context context
-						)
-		{
-			SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-			return sp.getBoolean(PREF_KIOSK_MODE, false);
 		}
 
 		public override Android.OS.IBinder OnBind(Android.Content.Intent intent) 
