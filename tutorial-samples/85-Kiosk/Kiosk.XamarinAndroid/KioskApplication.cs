@@ -72,6 +72,15 @@ namespace Kiosk
 			return wake_lock;
 		}
 
+		public void StartKioskService<AcctivityType> ()
+			where AcctivityType : Activity
+		{ 
+			System.Diagnostics.Debug.WriteLine ("KioskApplication StartKioskService");
+			// ... and this method
+			StartService (new Intent (this, typeof(KioskActivityRestartService<AcctivityType>)));
+
+			return;
+		}
 	}
 }
 

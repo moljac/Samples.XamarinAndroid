@@ -37,6 +37,8 @@ namespace Kiosk
 	{
 		public override void OnReceive(Android.Content.Context context, Android.Content.Intent intent)
 		{
+			System.Diagnostics.Debug.WriteLine("BootCompletedBroadcastReciver OnReceive");
+
 			Android.Content.Intent intent_start = null;
 
 			intent_start = new Android.Content.Intent(context, typeof(KioskActivity));

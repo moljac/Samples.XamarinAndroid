@@ -26,7 +26,7 @@ namespace Kiosk.Sample.XamarinAndroid
 		
 		public static void UpdateIdValues()
 		{
-			global::Kiosk.XamarinAndroid.Resource.String.library_name = global::Kiosk.Sample.XamarinAndroid.Resource.String.library_name;
+			global::Kiosk.Resource.String.library_name = global::Kiosk.Sample.XamarinAndroid.Resource.String.library_name;
 		}
 		
 		public partial class Attribute

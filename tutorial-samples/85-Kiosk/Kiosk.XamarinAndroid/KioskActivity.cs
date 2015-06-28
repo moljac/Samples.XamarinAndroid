@@ -21,6 +21,7 @@ namespace Kiosk
 			base.OnCreate (bundle);
 	
 			// Create your application here
+			System.Diagnostics.Debug.WriteLine("KioskActivity OnCreate");
 
 			// add the following line in activity (before setContentView is called!). 
 			// to deactivates the lock screen:
@@ -87,6 +88,8 @@ namespace Kiosk
 		/// <param name="hasFocus">Has focus.</param>
 		public override void OnWindowFocusChanged(bool hasFocus) 
 		{
+			System.Diagnostics.Debug.WriteLine("KioskActivity OnWindowsFocusChanged");
+
 			base.OnWindowFocusChanged(hasFocus);
 			if(!hasFocus) 
 			{
@@ -111,15 +114,14 @@ namespace Kiosk
 
 		public override bool DispatchKeyEvent(KeyEvent ke) 
 		{
+			System.Diagnostics.Debug.WriteLine("KioskActivity DispatchkeyEvent");
 			if (blockedKeys.Contains(ke.KeyCode)) 
 			{
 				return true;
 			} 
-			else 
-			{
-				return base.DispatchKeyEvent(ke);
-			}
-			}
+
+			return base.DispatchKeyEvent(ke);
+		}
 
 	}
 }
