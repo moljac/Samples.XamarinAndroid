@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace Kiosk
 {
-	[Application]
+	//[Application]
 	public class KioskApplication : Android.App.Application
 	{
 		private KioskApplication instance;

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata minClientVersion="2.8.1">
+		<id>
+			HolisticWare.XamarinAndroid.BindingsProject.Utils
+		</id>
+		<!--
+		SemVer - Semantic Versioning
+		http://semver.org/
+		-->
+		<version>
+			0.0.1-alpha-20150903-0745
+		</version>
+		<title>
+			HolisticWare Team Utilitieas and Tools
+			for 
+			Xamarin.Android Bindings Projects
+		</title>
+		<authors>
+			Miljenko Cvjetko - moljac, moki, mel
+		</authors>
+		<owners>
+			Xamarin, HolisticWare, moljac - Miljenko Cvjetko
+		</owners>
+		<licenseUrl>
+			http://www.apache.org/licenses/LICENSE-2.0
+		</licenseUrl>
+		<projectUrl>
+			https://github.com/moljac/Samples.XamarinAndroid
+		</projectUrl>
+		<iconUrl>
+			http://refractored.com/images/pcl_settings_icon.png
+		</iconUrl>
+		<requireLicenseAcceptance>
+			false
+		</requireLicenseAcceptance>
+		<description>
+			HolisticWare Team Utilitieas and Tools
+			for 
+			Xamarin.Android Bindings Projects
+		</description>
+		<summary>
+			HolisticWare Team Utilitieas and Tools
+			for 
+			Xamarin.Android Bindings Projects		
+			+ 	scripts
+			+	executables
+		</summary>
+		<tags>
+			holisticware, xamarin
+			xamarin.android, tools
+			miljenko cvjetko, moljac
+		</tags>
+		<dependencies>
+			<!-- 
+			-->
+			<!--
+			<dependency id="HolisticWare.Core.Json" version="1.0.0" />
+			-->
+		</dependencies>
+	</metadata>
+	<files>
+		<!--
+		-->
+		<file 
+			src="content\.gitignore" 
+			target="content\bat\"
+			>
+		</file>
+	</files>
+</package>
