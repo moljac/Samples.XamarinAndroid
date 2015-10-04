@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JarSniffer", "JarSniffer\JarSniffer.csproj", "{FE4001D7-75C1-406D-8359-8C9FFA04715A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Productivity.XamarinAndroid.ApiXmlUtilities", "HolisticWare.Productivity.XamarinAndroid.ApiXmlUtilities\HolisticWare.Productivity.XamarinAndroid.ApiXmlUtilities.csproj", "{0D325B8C-B30E-4F33-954A-5A481E37E836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Productivity.XamarinAndroid.JavaUtilities", "HolisticWare.Productivity.XamarinAndroid.JavaUtilities\HolisticWare.Productivity.XamarinAndroid.JavaUtilities.csproj", "{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D325B8C-B30E-4F33-954A-5A481E37E836}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D325B8C-B30E-4F33-954A-5A481E37E836}.Debug|x86.Build.0 = Debug|Any CPU
+		{0D325B8C-B30E-4F33-954A-5A481E37E836}.Release|x86.ActiveCfg = Release|Any CPU
+		{0D325B8C-B30E-4F33-954A-5A481E37E836}.Release|x86.Build.0 = Release|Any CPU
+		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Debug|x86.Build.0 = Debug|Any CPU
+		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Release|x86.ActiveCfg = Release|Any CPU
+		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Release|x86.Build.0 = Release|Any CPU
+		{FE4001D7-75C1-406D-8359-8C9FFA04715A}.Debug|x86.ActiveCfg = Debug|x86
+		{FE4001D7-75C1-406D-8359-8C9FFA04715A}.Debug|x86.Build.0 = Debug|x86
+		{FE4001D7-75C1-406D-8359-8C9FFA04715A}.Release|x86.ActiveCfg = Release|x86
+		{FE4001D7-75C1-406D-8359-8C9FFA04715A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
