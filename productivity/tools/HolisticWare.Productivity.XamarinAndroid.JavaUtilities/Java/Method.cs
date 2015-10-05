@@ -2,7 +2,7 @@
 
 namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 {
-	public class Method
+	public partial class Method
 	{
 		public Method ()
 		{

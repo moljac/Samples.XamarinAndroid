@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<metadata>
+	<!--
+	===========================================================================================================
+	.net-ification of the namespace (java package)
+	
+		*	shortened (removed top level domain like com)
+		*	uppercase
+		*	pluralized
+
+
+
+	.netification/plurlization of namespaces (packages) will solve some of wranings 
+
+		~/Projects/HolisticWare/Components/Xamarin.Firebase/bindings/FirebaseSDK.XamarinAndroid.Binding/
+		BINDINGSGENERATOR: Warning BG8900: 
+		Type 
+			com.firebase.client.core.operation.Operation: 
+		FxDG naming violation: Type name 
+			'Operation' 
+		matches namespace part 'Operation'. 
+		(BG8900)
+		(FirebaseSDK.XamarinAndroid.Binding)
+
+
+	NOTE:
+
+		FirebaseSDK - because there is class Firebase
+		Clients namespace because there is Client class
+
+	-->
+	<attr 
+		path="/api/package[@name='com.firebase.client']" 
+		name="managedName"
+		>
+		FirebaseSDK.Clients
+	</attr>
+
+</metadata>
