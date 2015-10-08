@@ -15,7 +15,7 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <AssemblyName>Kiosk</AssemblyName>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,11 +47,11 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="BootReceiver.cs" />
     <Compile Include="KioskActivity.cs" />
-    <Compile Include="KioskApplication.cs" />
     <Compile Include="ScreenOffReceiver.cs" />
     <Compile Include="KioskActivityRestartService.cs" />
     <Compile Include="SharedPrefferencesUtilities.cs" />
     <Compile Include="ViewExtensionMethods.cs" />
+    <Compile Include="KioskApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

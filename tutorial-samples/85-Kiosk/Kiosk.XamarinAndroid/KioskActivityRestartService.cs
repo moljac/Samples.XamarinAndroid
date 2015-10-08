@@ -13,15 +13,18 @@ namespace Kiosk
 	///		immediately.
 	/// </summary>
 	[Android.App.Service]
-	public class KioskActivityRestartService<ActivityType> 
+	public class KioskActivityRestartService//<ActivityType> 
 		: 
 		Android.App.Service 
-		where ActivityType : Android.App.Activity
+		//where ActivityType : Android.App.Activity
 
 	{
 		private static long INTERVAL = Java.Util.Concurrent.TimeUnit.Seconds.ToMillis(2); 
 		// periodic interval to check in seconds -> 2 seconds
-		private static string TAG = typeof(KioskActivityRestartService<ActivityType>).Name;
+		private static string TAG = 
+						//typeof(KioskActivityRestartService<ActivityType>).Name
+						typeof(KioskActivityRestartService).Name
+						;
 
 		private Java.Lang.Thread t = null;
 		private Android.Content.Context ctx = null;
@@ -119,11 +122,15 @@ namespace Kiosk
 					;
 		}
 
+		private void RestoreApp<ActivityType> ()
+		{
+		}
+
 		private void RestoreApp() 
 		{
 			System.Diagnostics.Debug.WriteLine("KioskActivityRestartService RestoreApp");
 			// Restart activity
-			Android.Content.Intent i = new Android.Content.Intent(ctx, typeof(ActivityType));
+			Android.Content.Intent i = new Android.Content.Intent(ctx, typeof(KioskActivity));
 			i.AddFlags(Android.Content.ActivityFlags.NewTask);
 			ctx.StartActivity(i);
 

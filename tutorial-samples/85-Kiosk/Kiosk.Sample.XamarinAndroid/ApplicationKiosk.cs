@@ -29,7 +29,6 @@ namespace Kiosk.Sample.XamarinAndroid
 			base.OnCreate();
 			// Create your application here
 
-			base.StartKioskService<MainActivity>();
 
 			return;
 		}

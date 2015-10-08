@@ -34,6 +34,7 @@ namespace Kiosk.Sample.XamarinAndroid
 
 		void ButtonMusicPlayer_Click (object sender, EventArgs e)
 		{
+			this.StartActivity(typeof(MusicPlayerActivity));
 			Toast.MakeText(this, "Play Music", ToastLength.Long).Show();
 
 			return;
@@ -41,6 +42,7 @@ namespace Kiosk.Sample.XamarinAndroid
 
 		void ButtonBrowser_Click (object sender, EventArgs e)
 		{
+			this.StartActivity(typeof(BrowserActivity));
 			Toast.MakeText(this, "Open Browser", ToastLength.Long).Show();
 
 			return;

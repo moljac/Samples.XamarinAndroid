@@ -35,6 +35,9 @@ namespace Kiosk
 
 			RegisterKioskModeScreenOffReceiver();
 
+			this.StartKioskService();
+			//this.StartKioskService<MainActivity>();
+
 			return;
 		}
 
@@ -72,12 +75,21 @@ namespace Kiosk
 			return wake_lock;
 		}
 
-		public void StartKioskService<AcctivityType> ()
-			where AcctivityType : Activity
+		public void StartKioskService ()
+		//public void StartKioskService<AcctivityType> ()
+			//where AcctivityType : Activity
 		{ 
 			System.Diagnostics.Debug.WriteLine ("KioskApplication StartKioskService");
 			// ... and this method
-			StartService (new Intent (this, typeof(KioskActivityRestartService<AcctivityType>)));
+			StartService 
+				(
+					new Intent 
+						(
+							this, 
+							//typeof(KioskActivityRestartService<AcctivityType>)
+							typeof(KioskActivityRestartService)
+						)
+				);
 
 			return;
 		}

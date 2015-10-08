@@ -18,11 +18,11 @@ namespace Kiosk
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
+			System.Diagnostics.Debug.WriteLine("KioskActivity base.OnCreate(bundle)");
 			base.OnCreate (bundle);
 	
 			// Create your application here
-			System.Diagnostics.Debug.WriteLine("KioskActivity OnCreate");
-
+			System.Diagnostics.Debug.WriteLine("KioskActivity this.OnCreate(bundle) start");
 			// add the following line in activity (before setContentView is called!). 
 			// to deactivates the lock screen:
 			Window.AddFlags
@@ -62,6 +62,7 @@ namespace Kiosk
 	                Android.Views.WindowManagerFlags.TurnScreenOn
 				);      
 
+			System.Diagnostics.Debug.WriteLine("KioskActivity this.OnCreate(bundle) stop");
 			return;
 		}
 
@@ -69,7 +70,7 @@ namespace Kiosk
 		{
 		    // NOP, do nothing, swallow Back press
 
-			System.Diagnostics.Debug.WriteLine("KioskActivity OnBackPressed");
+			System.Diagnostics.Debug.WriteLine("KioskActivity OnBackPressed()");
 
 			return;
 		}
