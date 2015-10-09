@@ -1,0 +1,40 @@
+%YAML 1.2
+---
+name: Component Name
+version: "0.0.0.1"
+id: component-name
+publisher: Xamarin Inc / HolisticWare LLC
+license: ./License.md
+summary: Component for ...
+details: ./Details.md
+getting-started: ./GettingStarted.md
+icons: 
+  - ./icons/icon_128x128.png
+  - ./icons/icon_512x512.png
+screenshots:
+  - ./screenshots/screenshot_01.png
+  - ./screenshots/screenshot_01.png
+  - ./screenshots/screenshot_01.png
+publisher-url: http://xamarin.com/
+build:
+  - ../src/Solution.sln
+libraries: 
+#  ios: 
+#   - ../src//classic/AnyCPU/Release/Assembly.dll
+#  ios-unified: 
+#   - ../src//unified/AnyCPU/Release/Assembly.dll
+#  android: 
+#   - ../src//bin/Release/Assembly.dll
+  ios: 
+	- ../src//classic/AnyCPU/Release/Assembly.dll
+  ios-unified: 
+	- ../src//unified/AnyCPU/Release/Assembly.dll
+  android: 
+	- ../src//bin/Release/Assembly.dll
+samples:
+  iOS Sample: 
+	- ../samples/Sample-IOS.sln
+  iOS Classic Sample: 
+	- ../samples/Sample-IOS-Classic.sln
+  Android Sample: 
+	- ../samples/Sample-Android.sln
