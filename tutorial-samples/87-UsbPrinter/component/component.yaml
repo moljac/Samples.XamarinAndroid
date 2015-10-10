@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+name: HolisticWare USB Reader Mode for Xamarin.Android 
+version: "0.0.0.1"
+id: 
+  holisticware-usb-reader
+publisher: 
+  HolisticWare LLC
+summary: 
+  Xamarin Component for adding USB Reader suppport to Xamarin.Android applications
+publisher-url: 
+  http://holisticware.net
+icons: 
+  - ./icons/icon_128x128.png
+  - ./icons/icon_512x512.png
+screenshots:
+  - ./screenshots/screenshot_01.png
+  - ./screenshots/screenshot_01.png
+  - ./screenshots/screenshot_01.png
+license: 
+  - ./License.md
+details: 
+  - ./Details.md
+getting-started: 
+  - ./GettingStarted.md
+build:
+  - ../source/HolisticWare.USBReader.XamarinAndroid.sln 
+  - ../samples/Samples.HolisticWare.USBReader.XamarinAndroid.sln
+libraries: 
+  android: 
+    - ../source/HolisticWare.USBReader.XamarinAndroid/bin/Release/HolisticWare.USBReader.dll
+samples:
+  Android Sample:  
+    ../samples/Samples.HolisticWare.USBReader.XamarinAndroid.sln
