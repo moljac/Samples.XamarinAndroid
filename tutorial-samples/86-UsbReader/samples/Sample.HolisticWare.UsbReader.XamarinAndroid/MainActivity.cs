@@ -6,12 +6,13 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace Sample.HolisticWare.UsbReader.XamarinAndroid
+namespace Sample.HolisticWare.USBReader.XamarinAndroid
 {
-	[Activity(Label = "Sample.HolisticWare.UsbReader.XamarinAndroid", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : HolisticWare.UsbReader.XamarinAndroid.ActivityUsbReader
+	[Activity(Label = "Kiosk.Sample.XamarinAndroid", MainLauncher = true, Icon = "@drawable/icon")]
+	public class MainActivity : global::HolisticWare.USBReader.ActivityUSBReader
 	{
-		int count = 1;
+		Button buttonMusicPlayer = null;
+		Button buttonBrowser = null;
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -19,13 +20,13 @@ namespace Sample.HolisticWare.UsbReader.XamarinAndroid
 
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
-
+			
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.MyButton);
 
-			button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+			return;
 		}
 	}
 }
+
 

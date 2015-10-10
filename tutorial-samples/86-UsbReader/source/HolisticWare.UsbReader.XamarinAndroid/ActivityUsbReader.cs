@@ -1,3 +1,4 @@
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace HolisticWare.UsbReader.XamarinAndroid
+namespace HolisticWare.USBReader
 {
-	[Activity(Label = "ActivityUsbReader")]
-	public class ActivityUsbReader : Activity
+	[Activity (Label = "ActivityUSBReader")]			
+	public class ActivityUSBReader : Activity
 	{
-		protected override void OnCreate(Bundle savedInstanceState)
+		protected override void OnCreate (Bundle bundle)
 		{
-			base.OnCreate(savedInstanceState);
+			base.OnCreate (bundle);
 
 			// Create your application here
 		}
-
-
 	}
 }
+
