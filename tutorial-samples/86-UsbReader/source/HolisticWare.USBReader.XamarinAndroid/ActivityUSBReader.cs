@@ -11,10 +11,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Sample.HolisticWare.Kiosk.XamarinAndroid
+namespace HolisticWare.USBReader.XamarinAndroid
 {
-	[Activity (Label = "MusicPlayerActivity")]			
-	public class MusicPlayerActivity : Activity
+	[Activity (Label = "ActivityUSBReader")]			
+	public class ActivityUSBReader : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{

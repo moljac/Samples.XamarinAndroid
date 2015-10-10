@@ -81,10 +81,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <ProjectReference Include="..\..\source\HolisticWare.Kiosk.XamarinAndroid\HolisticWare.Kiosk.XamarinAndroid.csproj">
-      <Project>{0EBE7C40-E951-484A-8721-40D4A9E14BB2}</Project>
-      <Name>HolisticWare.Kiosk.XamarinAndroid</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
