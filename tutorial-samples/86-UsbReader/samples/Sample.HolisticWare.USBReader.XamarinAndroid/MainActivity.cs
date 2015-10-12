@@ -6,13 +6,11 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace Sample.HolisticWare.Kiosk.XamarinAndroid
+namespace Sample.HolisticWare.USBReader.XamarinAndroid
 {
-	[Activity(Label = "Kiosk.Sample.XamarinAndroid", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : global::HolisticWare.Kiosk.KioskActivity
+	[Activity(Label = "HolisticWare.USBREader.XamarinAndroid", MainLauncher = true, Icon = "@drawable/icon")]
+	public class MainActivity : global::HolisticWare.USBReader.ActivityUSBReader
 	{
-		Button buttonMusicPlayer = null;
-		Button buttonBrowser = null;
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -23,30 +21,10 @@ namespace Sample.HolisticWare.Kiosk.XamarinAndroid
 			
 			// Get our button from the layout resource,
 			// and attach an event to it
-			buttonMusicPlayer = FindViewById<Button>(Resource.Id.buttonMusicPlayer);
-			buttonBrowser = FindViewById<Button>(Resource.Id.buttonBrowser);
-
-			buttonBrowser.Click += ButtonBrowser_Click;
-			buttonMusicPlayer.Click += ButtonMusicPlayer_Click;
-
-			return;
-		}
-
-		void ButtonMusicPlayer_Click (object sender, EventArgs e)
-		{
-			this.StartActivity(typeof(MusicPlayerActivity));
-			Toast.MakeText(this, "Play Music", ToastLength.Long).Show();
-
-			return;
-		}
-
-		void ButtonBrowser_Click (object sender, EventArgs e)
-		{
-			this.StartActivity(typeof(BrowserActivity));
-			Toast.MakeText(this, "Open Browser", ToastLength.Long).Show();
 
 			return;
 		}
 	}
 }
+
 

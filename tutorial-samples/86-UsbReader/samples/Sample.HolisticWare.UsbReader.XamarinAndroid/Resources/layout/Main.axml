@@ -2,15 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <Button
-        android:id="@+id/buttonMusicPlayer"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <EditText
+        android:id="@+id/editTextMultiLine01"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:minLines="6"
+        android:gravity="top|left"
+        android:maxLines="10"
+        android:layout_height="wrap_content"
         android:layout_width="fill_parent"
+        android:scrollbars="vertical" />
+    <EditText
+        android:id="@+id/editTextMultiLine02"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:minLines="6"
+        android:gravity="top|left"
+        android:maxLines="10"
         android:layout_height="wrap_content"
-        android:text="Music Player" />
-    <Button
-        android:text="Browser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonBrowser" />
+        android:layout_width="fill_parent"
+        android:scrollbars="vertical" />
 </LinearLayout>

@@ -8,13 +8,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0EBE7C40-E951-484A-8721-40D4A9E14BB2}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>HolisticWare.Kiosk</RootNamespace>
+    <RootNamespace>HolisticWare.USBReader</RootNamespace>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <AssemblyName>HolisticWare.Kiosk</AssemblyName>
+    <AssemblyName>HolisticWare.USBReader</AssemblyName>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,17 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="BootReceiver.cs" />
-    <Compile Include="KioskActivity.cs" />
-    <Compile Include="ScreenOffReceiver.cs" />
-    <Compile Include="KioskActivityRestartService.cs" />
-    <Compile Include="SharedPrefferencesUtilities.cs" />
-    <Compile Include="ViewExtensionMethods.cs" />
-    <Compile Include="KioskApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
-    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

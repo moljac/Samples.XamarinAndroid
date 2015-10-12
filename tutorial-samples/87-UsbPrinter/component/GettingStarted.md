@@ -1,8 +1,7 @@
 # Getting Started 
 
-HolisticWare USB Reader Component for Xamarin.Android is a component for adding support
-for USB Barcode readers to Xamarin.Android applications
-
+HolisticWare USB Printer Component for Xamarin.Android is a component for adding support
+for USB printers to Xamarin.Android applications
 
 ## Intro
 

@@ -8,11 +8,9 @@ using Android.OS;
 
 namespace Sample.HolisticWare.USBReader.XamarinAndroid
 {
-	[Activity(Label = "Kiosk.Sample.XamarinAndroid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "HolisticWare.USBREader.XamarinAndroid", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : global::HolisticWare.USBReader.ActivityUSBReader
 	{
-		Button buttonMusicPlayer = null;
-		Button buttonBrowser = null;
 
 		protected override void OnCreate(Bundle bundle)
 		{

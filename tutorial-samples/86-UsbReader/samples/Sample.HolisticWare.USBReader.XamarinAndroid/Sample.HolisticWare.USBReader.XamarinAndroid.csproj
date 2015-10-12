@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sample.HolisticWare.Kiosk.XamarinAndroid</RootNamespace>
-    <AssemblyName>Kiosk.Sample.XamarinAndroid</AssemblyName>
+    <RootNamespace>Sample.HolisticWare.USBReader.XamarinAndroid</RootNamespace>
+    <AssemblyName>Sample.HolisticWare.USBReader.XamarinAndroid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -52,9 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.HolisticWare.XamarinAndroid.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MusicPlayerActivity.cs" />
-    <Compile Include="BrowserActivity.cs" />
-    <Compile Include="ApplicationKiosk.cs" />
+    <Compile Include="ActivityUSBReader.cs" />
+    <Compile Include="USBDeviceAttachedReceiver.cs" />
+    <Compile Include="USBDeviceDetachedReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
-    <AndroidResource Include="Resources\layout\Browser.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -81,4 +80,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\source\HolisticWare.USBReader.XamarinAndroid\HolisticWare.USBReader.XamarinAndroid.csproj">
+      <Project>{0EBE7C40-E951-484A-8721-40D4A9E14BB2}</Project>
+      <Name>HolisticWare.USBReader.XamarinAndroid</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
