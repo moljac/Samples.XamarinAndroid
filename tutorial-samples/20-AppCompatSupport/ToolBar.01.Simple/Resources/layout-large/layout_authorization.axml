@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<!--
+    ====================================================================================
+    -->
+    <include
+        android:id="@+id/toolbar_header"
+        layout="@layout/toolbar_header" />
+    <include
+        android:id="@+id/toolbar_footer"
+        layout="@layout/toolbar_footer" />
+<!--
+    ====================================================================================
+    -->
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_header"
+        android:layout_above="@id/toolbar_footer">
+    <!--
+        <View
+            android:layout_height="100dp"
+            app:layout_widthPercent="50%"
+			app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="25%"
+			app:layout_marginTopPercent="25%"
+			android:background="#ff0000" />
+		-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_heightPercent="60%"
+            app:layout_marginTopPercent="20%"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:background="@android:color/background_light">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <ImageView
+                android:src="@mipmap/pairing_key_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/trilix_authorization_textview_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_message" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+            <TextView
+                android:text="@string/trilix_authorization_textview_pairing_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_label" />
+            <EditText
+                android:hint="@string/trilix_authorization_textview_pairing_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <Button
+                android:id="@+id/buttonAuthenticate"
+                android:text="@string/trilix_authorization_button_authenticate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/trilix_header_red_600" />
+        </LinearLayout>
+    </android.support.percent.PercentRelativeLayout>
+</RelativeLayout>

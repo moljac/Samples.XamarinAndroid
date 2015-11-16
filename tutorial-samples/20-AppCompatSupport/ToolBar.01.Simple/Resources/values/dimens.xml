@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="font_size_message">22sp</dimen>
+  <dimen name="font_size_label">16sp</dimen>
+
+  <dimen name="textview_height">25dp</dimen>
+  <dimen name="textview_width">150dp</dimen>
+</resources>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<menu 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	>
+	 <item
+	      android:id="@+id/menu_register"
+	      app:showAsAction="always"
+	      android:title="@string/menu_register" 
+	      />
+	 <item
+	      android:id="@+id/menu_register_information"
+	      app:showAsAction="always"
+	      android:title="@string/menu_register_information" 
+	      />
+	 <item
+	      android:id="@+id/menu_register_close"
+	      app:showAsAction="always"
+	      android:title="@string/menu_register_close" 
+	      />
+	 <item
+	      android:id="@+id/menu_register_invoices"
+	      app:showAsAction="always"
+	      android:title="@string/menu_register_invoices" 
+	      />
+	 <item
+	      android:id="@+id/menu_admin"
+	      app:showAsAction="always"
+	      android:title="@string/menu_admin" 
+	      />
+
+	 <item
+	      android:id="@+id/menu_settings_application"
+	      app:showAsAction="never"
+	      android:title="@string/menu_settings_application" 
+	      />
+	 <item
+	      android:id="@+id/menu_settings_printers"
+	      android:showAsAction="never"
+	      android:title="@string/menu_settings_printers" 
+	      />
+	 <item
+	      android:id="@+id/menu_settings_scanners"
+	      android:showAsAction="never"
+	      android:title="@string/menu_settings_scanners" 
+	      />
+	 <item
+	      android:id="@+id/menu_downpayment"
+	      android:showAsAction="never"
+	      android:title="@string/menu_downpayment" 
+	      />
+	 <item
+	      android:id="@+id/menu_reports"
+	      android:showAsAction="never"
+	      android:title="@string/menu_reports" 
+	      />
+</menu>

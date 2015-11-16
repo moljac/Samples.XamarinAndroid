@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:layout_alignParentBottom="true"
+    android:gravity="left"
+    android:background="@color/trilix_header_red_600"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+<!--
+    Works, but unnecessary
+	<TextView  
+	   android:id="@+id/toolbar_title"  
+	   android:layout_width="wrap_content"
+	   android:layout_height="match_parent"
+	   android:gravity="center"  
+	   android:singleLine="true"  
+	   android:text="Toolbar Title"  
+	   android:textColor="@android:color/white"  
+	   android:textSize="18sp"  
+	   android:textStyle="bold" />  
+   	-->
+<!--
+   		Left Alignment Mandatory
+   	-->
+    <android.support.v7.widget.ActionMenuView
+        android:id="@+id/amvMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize" />
+</android.support.v7.widget.Toolbar>
