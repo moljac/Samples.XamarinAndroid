@@ -10,13 +10,13 @@ namespace HolisticWare.ToolbarSimple
 			Theme="@style/AppThemeHolisticWare"	// descendant of the Theme.AppCompat
 		)
 	]
-	public class ApplicationTrilixCahsDesk : Application
+	public class ApplicationHolisticWare : Application
 	{
-		public ApplicationTrilixCahsDesk ()
+		public ApplicationHolisticWare ()
 		{
 		}
 
-		public ApplicationTrilixCahsDesk(IntPtr javaReference, JniHandleOwnership transfer) 
+		public ApplicationHolisticWare(IntPtr javaReference, JniHandleOwnership transfer) 
 			: base(javaReference, transfer)
 	    {
 	    }

@@ -12,13 +12,13 @@ namespace HolisticWare.ToolbarSimple
 {
 	[Activity 
 		(
-			Label = "Trilix.CashDesk", 
+			Label = "HolisticWere.Toolbar.Simple", 
 			MainLauncher = true, 
 			Icon = "@mipmap/icon",
 			ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape
 		)
 	]
-	public class ActivityAuthorization : AppCompatActivity
+	public class ActivityLayout : AppCompatActivity
 	{
 
 		protected override void OnCreate (Bundle savedInstanceState)
