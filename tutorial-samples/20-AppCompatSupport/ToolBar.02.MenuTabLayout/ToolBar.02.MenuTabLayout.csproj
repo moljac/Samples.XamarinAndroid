@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{309EFA8E-B3CB-44AE-9846-7732F03A7358}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HolisticWare.ToolbarSimple</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>ToolBar.01.Simple</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <XamarinInsightsApiKey>27150b764e4429a4ba3d6a1ff0955a5e66262454</XamarinInsightsApiKey>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Insights">
+      <HintPath>..\packages\Xamarin.Insights.1.11.2\lib\MonoAndroid10\Xamarin.Insights.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Percent">
+      <HintPath>..\packages\Xamarin.Android.Support.Percent.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.Percent.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ApplicationHolisticWare.cs" />
+    <Compile Include="ActivityLayout.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\menu\menu_bottom.xml" />
+    <AndroidResource Include="Resources\menu\menu_top.xml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\layout-large\toolbar_header.axml" />
+    <AndroidResource Include="Resources\layout-large\toolbar_footer.axml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\bill_tables_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\close_register_no_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\close_register_warning_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\login_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\login_marker_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\login_register_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\pairing_key_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\status_bar_address_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\status_bar_barcode_scanner_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\status_bar_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\status_bar_merchant_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\status_bar_printer_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\status_bar_user_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\table_screen_single_table_icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\table_screen_single_table_off_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\bill_tables_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\close_register_no_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\close_register_warning_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\login_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\login_marker_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\login_register_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\pairing_key_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\status_bar_address_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\status_bar_barcode_scanner_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\status_bar_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\status_bar_merchant_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\status_bar_printer_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\status_bar_user_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\table_screen_single_table_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\table_screen_single_table_off_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\bill_tables_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\close_register_no_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\close_register_warning_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\login_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\login_marker_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\login_register_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\pairing_key_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\status_bar_address_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\status_bar_barcode_scanner_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\status_bar_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\status_bar_merchant_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\status_bar_printer_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\status_bar_user_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\table_screen_single_table_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\table_screen_single_table_off_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\bill_tables_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\close_register_no_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\close_register_warning_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\login_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\login_marker_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\login_register_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\pairing_key_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\status_bar_address_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\status_bar_barcode_scanner_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\status_bar_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\status_bar_merchant_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\status_bar_printer_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\status_bar_user_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\table_screen_single_table_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\table_screen_single_table_off_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\bill_tables_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\close_register_no_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\close_register_warning_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\login_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\login_marker_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\login_register_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\pairing_key_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\status_bar_address_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\status_bar_barcode_scanner_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\status_bar_internet_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\status_bar_merchant_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\status_bar_printer_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\status_bar_user_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\table_screen_single_table_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\table_screen_single_table_off_icon.png" />
+    <AndroidResource Include="Resources\layout-large\x_test_layout.axml" />
+    <AndroidResource Include="Resources\layout-large\layout_authorization.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\layout-large\" />
+    <Folder Include="Resources\menu\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.2\build\MonoAndroid10\Xamarin.Insights.targets')" />
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportpercent">
+      <Version>22.2.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+</Project>

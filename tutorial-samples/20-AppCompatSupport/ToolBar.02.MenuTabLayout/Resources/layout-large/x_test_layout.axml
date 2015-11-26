@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top">
+<!--
+    OK
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E53935" />
+    -->
+    <include
+        android:id="@+id/toolbar_header"
+        layout="@layout/toolbar_header" />
+    <LinearLayout
+        android:layout_below="@id/toolbar_header"
+        android:layout_above="@id/toolbar_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <include
+        android:id="@+id/toolbar_footer"
+        layout="@layout/toolbar_footer" />
+<!-- Footer -->
+<!--
+    Works 
+    too complex
+     <RelativeLayout 
+		android:id="@+id/footer"
+		android:layout_width="match_parent" 
+		android:orientation="horizontal"
+		android:layout_alignParentBottom="true"
+		android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/toolbar_footer"/>
+
+        </LinearLayout>
+	-->
+</RelativeLayout>

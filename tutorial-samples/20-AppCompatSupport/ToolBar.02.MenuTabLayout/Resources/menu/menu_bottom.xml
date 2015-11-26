@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_gravity="left"
+	>
+	<item 
+		android:id="@+id/menu_bottom_printer" 
+		app:showAsAction="always" 
+		android:icon="@mipmap/status_bar_printer_icon"
+		/>	 
+	<item 
+		android:id="@+id/menu_bottom_printer" 
+		app:showAsAction="always" 
+		android:icon="@drawable/Icon"
+		/>	 
+	<item 
+		android:id="@+id/menu_bottom_printer" 
+		app:showAsAction="always" 
+		android:icon="@mipmap/status_bar_barcode_scanner_icon"
+		/>	 
+	<item 
+		android:id="@+id/menu_bottom_printer" 
+		app:showAsAction="always" 
+		android:icon="@mipmap/status_bar_address_icon"
+		/>	 
+	<item 
+		android:id="@+id/menu_bottom_printer" 
+		app:showAsAction="always" 
+		android:icon="@mipmap/status_bar_merchant_icon"
+		/>	 
+	<item 
+		android:id="@+id/menu_bottom_printer" 
+		app:showAsAction="always" 
+		android:icon="@mipmap/status_bar_user_icon"
+		/>	 
+	<item 
+		android:id="@+id/menu_bottom_logout" 
+		app:showAsAction="always" 
+		android:title="@string/menu_bottom_logout" 
+		/>	 
+
+
+
+
+</menu>

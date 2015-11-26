@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Trilix.CashDesk</string>
+
+	<!--
+	Menu top
+	-->
+	<string name="menu_register">REGISTER</string>
+	<string name="menu_register_information">REGISTER INFO</string>
+	<string name="menu_register_close">CLOSE REGISTER</string>
+	<string name="menu_register_invoices">INVOICES</string>
+	<string name="menu_admin">ADMIN</string>
+
+	<string name="menu_settings_application">Application Settings</string>
+	<string name="menu_settings_printers">Printer Settings</string>
+	<string name="menu_settings_scanners">Scanner Settings</string>
+	<string name="menu_downpayment">Downpayment</string>
+	<string name="menu_reports">Reports</string>
+
+	<string name="menu_bottom_logout">LOGOUT ></string>
+
+	<!--
+	Layout Authorization 
+	-->
+	<string name="trilix_authorization_textview_message">Enter your authorization code in the field below and we will authorize this register.</string>
+	<string name="trilix_authorization_textview_pairing_key">PAIRING KEY</string>
+	<string name="trilix_authorization_button_authenticate">AUTHENTICATE</string>
+	<!--
+	Layout Login
+	-->
+	<string name="trilix_login_textview_username">USERNAME</string>
+	<string name="trilix_login_textview_password">PASSWORD</string>
+	<string name="trilix_login_button_login">LOGIN</string>
+	<string name="trilix_login_textview_location">Location</string>
+	<string name="trilix_login_textview_location_value">Nova Cesta 52</string>
+	<string name="trilix_login_textview_register">Register</string>
+	<string name="trilix_login_textview_register_value">33012</string>
+</resources>

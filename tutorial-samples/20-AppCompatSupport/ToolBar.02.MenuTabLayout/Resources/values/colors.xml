@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--
+	http://www.google.com/design/spec/style/color.html#color-color-palette
+	-->
+    <color name="trilix_header_red_600">#E53935</color>
+</resources>
