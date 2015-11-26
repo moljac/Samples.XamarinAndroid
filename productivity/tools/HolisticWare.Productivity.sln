@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Productivity.X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Productivity.XamarinAndroid.JavaUtilities", "HolisticWare.Productivity.XamarinAndroid.JavaUtilities\HolisticWare.Productivity.XamarinAndroid.JavaUtilities.csproj", "{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HarryPotterJavaAndroid", "HarryPotterJavaAndroid\HarryPotterJavaAndroid.csproj", "{F56FE713-FCF7-4443-83E9-A762AC43564B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolisticWare.Productivity.XamarinAndroid.PortingUtilities", "HolisticWare.Productivity.XamarinAndroid.Porting\HolisticWare.Productivity.XamarinAndroid.PortingUtilities.csproj", "{34EEEC9D-541F-477A-B020-4DA4855FF691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -17,10 +21,18 @@ Global
 		{0D325B8C-B30E-4F33-954A-5A481E37E836}.Debug|x86.Build.0 = Debug|Any CPU
 		{0D325B8C-B30E-4F33-954A-5A481E37E836}.Release|x86.ActiveCfg = Release|Any CPU
 		{0D325B8C-B30E-4F33-954A-5A481E37E836}.Release|x86.Build.0 = Release|Any CPU
+		{34EEEC9D-541F-477A-B020-4DA4855FF691}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34EEEC9D-541F-477A-B020-4DA4855FF691}.Debug|x86.Build.0 = Debug|Any CPU
+		{34EEEC9D-541F-477A-B020-4DA4855FF691}.Release|x86.ActiveCfg = Release|Any CPU
+		{34EEEC9D-541F-477A-B020-4DA4855FF691}.Release|x86.Build.0 = Release|Any CPU
 		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Debug|x86.Build.0 = Debug|Any CPU
 		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Release|x86.ActiveCfg = Release|Any CPU
 		{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}.Release|x86.Build.0 = Release|Any CPU
+		{F56FE713-FCF7-4443-83E9-A762AC43564B}.Debug|x86.ActiveCfg = Debug|x86
+		{F56FE713-FCF7-4443-83E9-A762AC43564B}.Debug|x86.Build.0 = Debug|x86
+		{F56FE713-FCF7-4443-83E9-A762AC43564B}.Release|x86.ActiveCfg = Release|x86
+		{F56FE713-FCF7-4443-83E9-A762AC43564B}.Release|x86.Build.0 = Release|x86
 		{FE4001D7-75C1-406D-8359-8C9FFA04715A}.Debug|x86.ActiveCfg = Debug|x86
 		{FE4001D7-75C1-406D-8359-8C9FFA04715A}.Debug|x86.Build.0 = Debug|x86
 		{FE4001D7-75C1-406D-8359-8C9FFA04715A}.Release|x86.ActiveCfg = Release|x86
