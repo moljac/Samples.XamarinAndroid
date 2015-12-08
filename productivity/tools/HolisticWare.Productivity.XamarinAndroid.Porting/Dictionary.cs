@@ -15,17 +15,23 @@ namespace System.Collections.Generic
 			foreach (System.Collections.Generic.KeyValuePair<TKey ,System.Json.JsonValue> kvp in json_value)
 			{
 				TKey key = kvp.Key;
+				TValue value = default(TValue);
 				switch (kvp.Value.JsonType)
 				{
 					case Json.JsonType.Object :
+						value = (TValue) kvp.Value;
 						break;
 					case Json.JsonType.String :
+						value = (string) kvp.Value;
 						break;
 					case Json.JsonType.Number :
+						value = (double) kvp.Value;
 						break;
 					case Json.JsonType.Boolean :
+						value = (bool) kvp.Value;
 						break;
 					case Json.JsonType.Array :
+
 						break;
 					default:
 						break;

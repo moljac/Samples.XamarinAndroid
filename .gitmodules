@@ -1,0 +1,3 @@
+[submodule "productivity/tools/Samples.Data"]
+	path = productivity/tools/Samples.Data
+	url = https://github.com/moljac/Samples.Data.Porting.git

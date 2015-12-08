@@ -122,4 +122,51 @@
     "MediaStore.Images.Media.CONTENT_TYPE"
     :
     "MediaStore.Images.Media.ContentType"
+    ,
+    "Looper.prepare()"
+    :
+    "Looper.Prepare()"
+	,
+	"Looper.loop()"
+	:
+	"Looper.Loop()"
+	,
+	"View getView(int "
+	:
+	"View GetView(int "
+	,
+	".inflate("
+	:
+	".Inflate("
+	,
+	"android.R.layout.simple_list_item_1"
+	:
+	"Android.Resource.Layout.SimpleListItem1"
+	,
+	"android.R.id.text1"
+	:
+	"Android.Resource.Id.Text1"
+	,
+	"SetContentView = R.layout."
+	:
+	"SetContentView(Resource.Layout."
+	,
+	"protected internal override void onPause("
+	:
+	"protected internal override void OnPause("
+	,
+	"base.onPause("
+	:
+	"base.OnPause("
+	
+	protected internal override void onResume(
+	protected internal override void OnResume(
+	base.onResume(
+	base.OnResume(
+	protected internal override void onDestroy(
+	protected internal override void OnDestroy(
+	base.onDestroy(
+	base.OnDestroy(
+	public override bool onCreateOptionsMenu(Menu
+	public override bool OnCreateOptionsMenu(IMenu
 }
