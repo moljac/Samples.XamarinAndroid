@@ -155,18 +155,40 @@
 	:
 	"protected internal override void OnPause("
 	,
-	"base.onPause("
+	"base.onPause"
 	:
-	"base.OnPause("
+	"base.OnPause"
+	,
+	"protected internal override void onResume"
+	:
+	"protected override void OnResume"
+	,
+	"base.onResume"
+	:
+	"base.OnResume"
+	,
+	"protected internal override void onDestroy"
+	:
+	"protected override void OnDestroy"
+	,
+	"base.onDestroy"
+	:
+	"base.OnDestroy"
+	,
+	"public override bool onCreateOptionsMenu(Menu"
+	:
+	"public override bool OnCreateOptionsMenu(IMenu"
+	,
+	"startActivityForResult"
+	:
+	"StartActivityForResult"
+	,
+	".arg2"
+	:
+	".Arg2"
+	,
+	""
+	:
+	""
 	
-	protected internal override void onResume(
-	protected internal override void OnResume(
-	base.onResume(
-	base.OnResume(
-	protected internal override void onDestroy(
-	protected internal override void OnDestroy(
-	base.onDestroy(
-	base.OnDestroy(
-	public override bool onCreateOptionsMenu(Menu
-	public override bool OnCreateOptionsMenu(IMenu
 }

@@ -13,23 +13,7 @@ namespace JarSniffer
 		{
 			TraceSetup(args);
 
-			string[] path_xamarin_android_binding_project_folder_jars = 
-									new string[] 
-										{
-											"..",
-											"jars"
-										};
-
-			string[] path_project_data = 
-									new string[] 
-										{
-											"..",
-											"..",
-											"..",
-											"jars"
-										};
-
-			string path_folders = System.IO.Path.Combine (path_project_data);
+		    string path_folders = System.IO.Path.Combine (path_project_data);
 
 			System.IO.DirectoryInfo di = new System.IO.DirectoryInfo (path_folders);
 			System.IO.FileInfo[] file_infos = di.GetFiles ();

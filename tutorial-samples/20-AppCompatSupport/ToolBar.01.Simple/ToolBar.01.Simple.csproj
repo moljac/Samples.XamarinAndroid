@@ -63,8 +63,8 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ApplicationTrilixCahsDesk.cs" />
-    <Compile Include="ActivityAuthorization.cs" />
+    <Compile Include="ActivityLayout.cs" />
+    <Compile Include="ApplicationHolisticWare.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
