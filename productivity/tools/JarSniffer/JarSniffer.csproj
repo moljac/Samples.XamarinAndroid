@@ -39,13 +39,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ParthProber.cs" />
+    <Compile Include="PathProber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\HolisticWare.Productivity.XamarinAndroid.JavaUtilities\HolisticWare.Productivity.XamarinAndroid.JavaUtilities.csproj">
       <Project>{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}</Project>
       <Name>HolisticWare.Productivity.XamarinAndroid.JavaUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HolisticWare.Productivity.XamarinAndroid.Porting\HolisticWare.Productivity.XamarinAndroid.PortingUtilities.csproj">
+      <Project>{34EEEC9D-541F-477A-B020-4DA4855FF691}</Project>
+      <Name>HolisticWare.Productivity.XamarinAndroid.PortingUtilities</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
