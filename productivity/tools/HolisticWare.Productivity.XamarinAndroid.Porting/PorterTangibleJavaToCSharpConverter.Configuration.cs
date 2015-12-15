@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace HolisticWare.Productivity.XamarinAndroid.Porting
 {
@@ -70,7 +71,7 @@ namespace HolisticWare.Productivity.XamarinAndroid.Porting
 			catch (Exception exc)
 			{
 				string msg = exc.Message;
-				System.Diagnostics.Debug.WriteLine("Exception JsonValue.Parse: {0}", msg);
+				Trace.WriteLine("Exception JsonValue.Parse: {0}", msg);
 				throw; 
 			}
 			Dictionary<TKey, TValue> dictionary = new Dictionary<TKey, TValue> ();

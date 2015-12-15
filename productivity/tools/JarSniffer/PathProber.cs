@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Diagnostics;
 
 namespace HolisticWare.Productivity.Utilities
 {
@@ -23,31 +25,33 @@ namespace HolisticWare.Productivity.Utilities
                     );
         }
 
-        public Dictionary<string, List<System.IO.FileInfo>> DirectoryRootsWithFiles()
+        public Dictionary<string, List<FileInfo>> DirectoryRootsWithFiles()
         {
-            Dictionary<string, List<System.IO.FileInfo>> directory_roots_with_files_found = null;
+            Dictionary<string, List<FileInfo>> directory_roots_with_files_found = null;
+            directory_roots_with_files_found = new Dictionary<string, List<FileInfo>>();
+
 
             foreach (KeyValuePair<string, string[]> kvp in folders_to_probe)
             {
                 string[] files_jars = null;
-                List<System.IO.FileInfo> list_file_info_jars = new List<System.IO.FileInfo>();
-                string path_folder_root = System.IO.Path.Combine(kvp.Value);
+                List<FileInfo> list_file_info_jars = new List<FileInfo>();
+                string path_folder_root = Path.Combine(kvp.Value);
 
-                if (System.IO.Directory.Exists(path_folder_root))
+                if (Directory.Exists(path_folder_root))
                 {
-                    files_jars = System.IO.Directory.GetFiles
+                    files_jars = Directory.GetFiles
                                                         (
                                                             path_folder_root, 
                                                             "*.jar", 
-                                                            System.IO.SearchOption.AllDirectories
+                                                            SearchOption.AllDirectories
                                                         );
 
                     foreach (string f in files_jars)
                     {
-                        System.IO.FileInfo fi = new System.IO.FileInfo(f);
+                        FileInfo fi = new FileInfo(f);
                         list_file_info_jars.Add(fi);
 
-                        System.Diagnostics.Debug.WriteLine("file found: " + f);
+                        Trace.WriteLine("file found: " + f);
                     }
                     
                 }

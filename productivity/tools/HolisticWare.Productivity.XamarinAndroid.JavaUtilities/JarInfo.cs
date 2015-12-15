@@ -1,9 +1,13 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-
 using System.Linq;
 using System.Diagnostics;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+
+
 
 namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 {
@@ -12,7 +16,19 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 		
 		public JarInfo ()
 		{
+            FilePathJar2Xml =
+                "/Library/Frameworks/Xamarin.Android.framework/Versions/5.1.9-0/lib/mandroid/jar2xml.jar"
+                ;
+
+            return;
 		}
+
+
+        public string FilePathJar2Xml
+        {
+            get;
+            set;
+        }
 
 		public string FileNameJar
 		{
@@ -20,18 +36,36 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 			set;
 		}
 
-		public string TextOutputJarTF
+		public string TextOutputJar2Xml
 		{
 			get;
 			set;
 		}
+
+        public string TextErrorJar2Xml
+        {
+            get;
+            set;
+        }
+
+        public string TextOutputJarTF
+        {
+            get;
+            set;
+        }
+
+        public string TextErrorJarTF
+        {
+            get;
+            set;
+        }
 
 		public Dictionary<string,string> TextOutputClassXJavaP
 		{
 			get;
 			set;
 		}
-
+        
 		public List<Java.Lang.SyntaxElement> SyntaxElements
 		{
 			get;
@@ -56,143 +90,371 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 			set;
 		}
 
-		public async Task<string> JarTFAsync (string filename_jar)
+        public static List<JarInfo> JarsInformation
+        {
+            get;
+            set;
+        }
+
+        public string JarToGoogleAOSPFormatApiXml()
+        {
+            string output = null;
+            string error = null;
+            // java -jar \
+            //    /Library/Frameworks/Xamarin.Android.framework/Versions/5.1.9-0/lib/mandroid/jar2xml.jar
+            string command_exe = "java";
+            string command_args = "-jar" + " " + this.FilePathJar2Xml;
+
+            try
+            {
+                Console.WriteLine("java --jar jar2xml {0}", this.FileNameJar);
+                string arguments = 
+                        command_args + 
+                        " --jar=" + this.FileNameJar
+                        + " " +
+                        " --out=/dev/null"
+                        ;
+
+                ProcessStartInfo start = new ProcessStartInfo();
+                start.FileName = @"java"; // Specify exe name.
+                start.Arguments = arguments;
+                start.UseShellExecute = false;
+                start.RedirectStandardOutput = true;
+                start.RedirectStandardError = true;
+
+                using (Process process = Process.Start(start))
+                {
+                    StringBuilder o = new StringBuilder();
+                    StringBuilder e = new StringBuilder();
+
+                    using (AutoResetEvent outputWaitHandle = new AutoResetEvent(false))
+                    using (AutoResetEvent errorWaitHandle = new AutoResetEvent(false))
+                    {
+                        process.OutputDataReceived += (sender, ea) => 
+                        {
+                            if (ea.Data == null)
+                            {
+                                outputWaitHandle.Set();
+                            }
+                            else
+                            {
+                                o.AppendLine(ea.Data);
+                            }
+                        };
+                        process.ErrorDataReceived += (sender, ea) =>
+                        {
+                            if (ea.Data == null)
+                            {
+                                errorWaitHandle.Set();
+                            }
+                            else
+                            {
+                                e.AppendLine(ea.Data);
+                            }
+                        };
+
+                        process.Start();
+
+                        process.BeginOutputReadLine();
+                        process.BeginErrorReadLine();
+                        int timeout = 30 * 1000;
+                        if 
+                            (
+                                process.WaitForExit(timeout) 
+                                &&
+                                outputWaitHandle.WaitOne(timeout) 
+                                &&
+                                errorWaitHandle.WaitOne(timeout)
+                            )
+                        {
+                            // Process completed. Check process.ExitCode here.
+                            Trace.WriteLine("output = ");
+                            Trace.WriteLine("output = ");
+                            Trace.WriteLine(o.ToString());
+                            Trace.WriteLine("error = ");
+                            Trace.WriteLine(e.ToString());
+
+                            output = o.ToString();
+                            error = e.ToString();
+                        }
+                        else
+                        {
+                            // Timed out.
+                        }
+
+                    }
+                    process.WaitForExit();
+                    process.Close();
+                }
+
+                TextOutputJar2Xml = output;
+                TextErrorJar2Xml = error;
+            }
+            catch(System.Exception exc)
+            {
+                string msg = exc.Message;
+                throw;
+            }
+
+            Trace.WriteLine("Error = ");
+            Trace.WriteLine(error);
+            Trace.WriteLine("Output = ");
+            Trace.WriteLine(output);
+
+            return TextOutputJar2Xml;
+        }
+
+		public string JarTF ()
 		{
-			string output = "";
-			string error = "";
-			string javap_output = null;
+            string output = null;
+            string error = null;
+            Trace.WriteLine("jar tf {0}", this.FileNameJar);
 
-			Task.Run
-				(
-					async ()
-					=>
-					{
-						Console.WriteLine("jar tf {0}", filename_jar);
+            string arguments = " -tf " + this.FileNameJar;
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = @"jar"; // Specify exe name.
+            start.Arguments = arguments;
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            start.RedirectStandardError = true;
 
-						string arguments = " -tf " + filename_jar;
-						ProcessStartInfo start = new ProcessStartInfo();
-						start.FileName = @"jar"; // Specify exe name.
-						start.Arguments =arguments;
-						start.UseShellExecute = false;
-						start.RedirectStandardOutput = true;
-						start.RedirectStandardError = true;
 
-						using (Process process = Process.Start(start))
-						{
-							//
-							// Read in all the text from the process with the StreamReader.
-							//
-							using (System.IO.StreamReader reader = process.StandardOutput)
-							{
-								string result = reader.ReadToEnd();
-								Console.Write(result);
-								output = result;
-							}
+			using (Process process = Process.Start(start))
+			{
+                // Read in all the text from the process with the StreamReader.
+                using (StreamReader reader = process.StandardOutput)
+                {
+                    string result = reader.ReadToEnd();
+                    Console.Write(result);
+                    output = result;
+                }
 
-							using (System.IO.StreamReader reader = process.StandardError)
-							{
-								string result = reader.ReadToEnd();
-								Console.Write(result);
-								error = result;
-							}
-							process.WaitForExit();
-							process.Close();
-						}
+                using (StreamReader reader = process.StandardError)
+                {
+                    string result = reader.ReadToEnd();
+                    Console.Write(result);
+                    error = result;
+                }
 
-						TextOutputJarTF = output;
 
-						string[] output_lines = output.Split
-													(
-														new string[] 
-														{
-															Environment.NewLine
-														}, 
-														StringSplitOptions.None
-													);
-						Dictionary<string,string> class_x_javap_output = new Dictionary<string, string>();
-															
-						foreach (string java_lang_item_jar_tf in output_lines)
-						{
-							if(java_lang_item_jar_tf.ToLowerInvariant().StartsWith("meta-inf"))
-							{
-								continue;
-							}
+				process.WaitForExit();
+				process.Close();
+			}
 
-							if(java_lang_item_jar_tf.ToLowerInvariant().EndsWith(".class"))
-							{
-								string jar_tf_class_for_javap = null;
-								jar_tf_class_for_javap = java_lang_item_jar_tf
-																.Replace("/",".")
-																.Replace(".class", "")
-																;
-								javap_output = await JavaPClassInfo(filename_jar,jar_tf_class_for_javap);
+    		TextOutputJarTF = output;
 
-								TextOutputClassXJavaP.Add(jar_tf_class_for_javap,javap_output);
-							}
-						}
-					}
-				);
+    		string[] output_lines = output.Split
+    									(
+    										new string[] 
+    										{
+    											Environment.NewLine
+    										}, 
+    										StringSplitOptions.None
+    									);
+    		Dictionary<string,string> class_x_javap_output = new Dictionary<string, string>();
+            TextOutputClassXJavaP = class_x_javap_output;
+             												
+    		foreach (string java_lang_item_jar_tf in output_lines)
+    		{
+    			if(java_lang_item_jar_tf.ToLowerInvariant().StartsWith("meta-inf"))
+    			{
+    				continue;
+    			}
+
+    			if(java_lang_item_jar_tf.ToLowerInvariant().EndsWith(".class"))
+    			{
+    				string jar_tf_class_for_javap = null;
+    				jar_tf_class_for_javap = java_lang_item_jar_tf
+    												.Replace("/",".")
+    												.Replace(".class", "")
+    												;
+    				string javap_output = JavaPClassInfo(this.FileNameJar,jar_tf_class_for_javap);
+
+    				TextOutputClassXJavaP.Add(jar_tf_class_for_javap,javap_output);
+    			}
+    		}
 
 			return output;
 		}
 
 		int i = 0;
 
-		public async Task<string> JavaPClassInfo (string filename_jar, string jar_tf_class_for_javap)
+		public string JavaPClassInfo (string filename_jar, string jar_tf_class_for_javap)
 		{
 			string output = "";
 			string error = "";
 
-			await Task.Run
-					(
-						() =>
-						{
-							string arguments = 
-											" -classpath " 
-											+ 
-											filename_jar 
-											+
-											" "
-											+ 
-											jar_tf_class_for_javap
-											;
+			string arguments = 
+							" -classpath " 
+							+ 
+							filename_jar 
+							+
+							" "
+							+ 
+							jar_tf_class_for_javap
+							;
 
-							i++;
-							Console.WriteLine(@"	javap {0}	{1}", i, arguments);
+			i++;
+			Trace.WriteLine(@"	javap " + i + "    " + arguments);
 
-							ProcessStartInfo start = new ProcessStartInfo();
-							start.FileName = @"javap"; // Specify exe name.
-							start.Arguments=arguments;
-							start.UseShellExecute = false;
-							start.RedirectStandardOutput = true;
-							start.RedirectStandardError = true;
+			ProcessStartInfo start = new ProcessStartInfo();
+			start.FileName = @"javap"; // Specify exe name.
+			start.Arguments=arguments;
+			start.UseShellExecute = false;
+			start.RedirectStandardOutput = true;
+			start.RedirectStandardError = true;
 
-							using (Process process = Process.Start(start))
-							{
-								//
-								// Read in all the text from the process with the StreamReader.
-								//
-								using (System.IO.StreamReader reader = process.StandardOutput)
-								{
-									string result = reader.ReadToEnd();
-									Console.Write(result);
-									output = result;
-								}
+			using (Process process = Process.Start(start))
+			{
+				// Read in all the text from the process with the StreamReader.
+				using (StreamReader reader = process.StandardOutput)
+				{
+					string result = reader.ReadToEnd();
+					Console.Write(result);
+					output = result;
+				}
 
-								using (System.IO.StreamReader reader = process.StandardError)
-								{
-									string result = reader.ReadToEnd();
-									Console.Write(result);
-									error = result;
-								}
-								process.WaitForExit();
-								process.Close();
-							}
-						}
-					);
+				using (StreamReader reader = process.StandardError)
+				{
+					string result = reader.ReadToEnd();
+					Console.Write(result);
+					error = result;
+				}
+				process.WaitForExit();
+				process.Close();
+			}
 
 			return output;
 		}
+
+
+        public static List<JarInfo> AnalyseJars(List<FileInfo> file_infos)
+        {
+            List<JarInfo> jar_infos = GenerateJarInfoCollection(file_infos);
+
+            JarsInformation = jar_infos;
+
+            foreach (JarInfo ji in jar_infos)
+            {
+
+                string output_jar2xml = ji.JarToGoogleAOSPFormatApiXml();
+                string output_jartf = ji.JarTF();
+
+                ji.Dump();
+            }
+
+            /*
+            Task.Run
+            (
+                async () => 
+                {
+                    try
+                    {
+                        jar_infos = new List<JarInfo>();
+                        Dictionary<string, JarInfo> filename_jar_x_jar_info = null;
+                        filename_jar_x_jar_info = new Dictionary<string, JarInfo> ();
+
+
+
+                            string jar2xml = await jar_info.JarToGoogleAOSPFormatApiXmlAsync (filename_jar);
+                            string jar_tf_classes = jar_info.JarTFAsync (filename_jar).Result;
+                            string[] jar_tf_class_array = jar_tf_classes.Split
+                                                                            (
+                                                                                new string[] 
+                                                                                {
+                                                                                Environment.NewLine
+                                                                                }, 
+                                                                                StringSplitOptions.None
+                                                                            );
+                            foreach (string s in jar_tf_class_array)
+                            {   
+                                string java_class_info = jar_info.JavaPClassInfo (filename_jar, s).Result;
+                            }
+
+                            filename_jar_x_jar_info.Add (filename_jar, jar_info);
+
+                            foreach (KeyValuePair<string, JarInfo> kvp_name_jar_info in filename_jar_x_jar_info)
+                            {
+                                // Compile with define
+                                //      TRACE
+                                //      /d:TRACE
+
+                                Trace.WriteLine("jar2xml --jar " + kvp_name_jar_info.Value.FileNameJar );
+                                Trace.Indent();
+                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJar2Xml);
+                                Trace.Unindent();
+
+                                Trace.WriteLine("jar = " + kvp_name_jar_info.Key);
+                                Trace.Indent();
+                                Trace.WriteLine("jar = " + kvp_name_jar_info.Value.FileNameJar);
+
+                                Trace.WriteLine("jar -tf = ");
+                                Trace.Indent();
+                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJarTF);
+                                Trace.Unindent();
+
+                                Trace.WriteLine("javap -classname " + kvp_name_jar_info.Value.FileNameJar );
+                                Trace.Indent();
+                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJarTF);
+                                Trace.Unindent();
+
+                                Trace.Indent();
+                                Trace.WriteLine("SyntaxElements = " + kvp_name_jar_info.Value.SyntaxElements?.Count);
+                                Trace.WriteLine("Packages       = " + kvp_name_jar_info.Value.Packages?.Count);
+                                Trace.WriteLine("Classes        = " + kvp_name_jar_info.Value.Classes?.Count);
+                                Trace.WriteLine("Iterfaces      = " + kvp_name_jar_info.Value.Interfaces?.Count);
+                                Trace.Unindent();
+                                Trace.Unindent();
+                            }
+                    }
+                    catch(System.Exception exc)
+                    {
+                        string msg = exc.Message;
+                        throw;
+                    }
+
+                }
+            );
+            */
+            return jar_infos;
+        }
+
+        public static List<JarInfo> GenerateJarInfoCollection(List<FileInfo> file_infos)
+        {
+            List<JarInfo> jar_infos = new List<JarInfo>();
+            foreach (FileInfo fi in file_infos)
+            {
+                JarInfo jar_info = new JarInfo() 
+                {
+                   FileNameJar = fi.FullName
+                };
+                jar_infos.Add(jar_info);
+            }
+
+            return jar_infos;
+        }
+
+        public void Dump()
+        {
+            string fn = this.FileNameJar;
+            string dump_folder = this.FileNameJar + ".dump";
+
+            Directory.CreateDirectory(dump_folder);
+
+            File.WriteAllText
+                    (
+                       Path.Combine(dump_folder, "jar2xml.api.xml") , 
+                       this.TextOutputJar2Xml
+                    );
+
+            File.WriteAllText
+                    (
+                       Path.Combine(dump_folder, "jar-tf.txt") , 
+                       this.TextOutputJarTF
+                    );
+
+            return;
+        }
 	}
 }
 

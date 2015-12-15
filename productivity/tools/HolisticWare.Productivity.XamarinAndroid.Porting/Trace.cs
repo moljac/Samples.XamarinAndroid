@@ -3,14 +3,14 @@ using System.Diagnostics;
 
 namespace HolisticWare.Productivity.Utilities
 {
-    public partial class Trace
+    public partial class TraceSetup
     {
-        public Trace()
+        public TraceSetup()
         {
         }
 
 
-        public static void Setup(string[] args)
+        public static void Initialize(string[] args)
         {
             // Compile with define
             //      TRACE
@@ -51,13 +51,13 @@ namespace HolisticWare.Productivity.Utilities
 
             // Add the new console trace listener to 
             // the collection of trace listeners.
-            System.Diagnostics.Trace.Listeners.Clear();
-            System.Diagnostics.Trace.Listeners.Add
+            Trace.Listeners.Clear();
+            Trace.Listeners.Add
                                                 (
-                                                    new System.Diagnostics.TextWriterTraceListener(Console.Out)
+                                                    new TextWriterTraceListener(Console.Out)
                                                 );
-            System.Diagnostics.Trace.Listeners.Add(consoleTracer);
-            System.Diagnostics.Trace.Listeners.Add
+            Trace.Listeners.Add(consoleTracer);
+            Trace.Listeners.Add
                                                 (
                                                     new TextWriterTraceListener    
                                                             (
