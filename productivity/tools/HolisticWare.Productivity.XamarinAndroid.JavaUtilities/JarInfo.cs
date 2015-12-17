@@ -96,6 +96,92 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
             set;
         }
 
+        public static List<JarInfo> AnalyseJars(List<FileInfo> file_infos)
+        {
+            List<JarInfo> jar_infos = GenerateJarInfoCollection(file_infos);
+
+            JarsInformation = jar_infos;
+
+            foreach (JarInfo ji in jar_infos)
+            {
+
+                string output_jar2xml = ji.JarToGoogleAOSPFormatApiXml();
+                string output_jartf = ji.JarTF();
+
+                ji.JavaP(output_jartf);
+
+
+
+                ji.Dump();
+            }
+
+            /*
+            Task.Run
+            (
+                async () => 
+                {
+                    try
+                    {
+                        jar_infos = new List<JarInfo>();
+                        Dictionary<string, JarInfo> filename_jar_x_jar_info = null;
+                        filename_jar_x_jar_info = new Dictionary<string, JarInfo> ();
+
+
+
+                            foreach (string s in jar_tf_class_array)
+                            {   
+                                string java_class_info = jar_info.JavaPClassInfo (filename_jar, s).Result;
+                            }
+
+                            filename_jar_x_jar_info.Add (filename_jar, jar_info);
+
+                            foreach (KeyValuePair<string, JarInfo> kvp_name_jar_info in filename_jar_x_jar_info)
+                            {
+                                // Compile with define
+                                //      TRACE
+                                //      /d:TRACE
+
+                                Trace.WriteLine("jar2xml --jar " + kvp_name_jar_info.Value.FileNameJar );
+                                Trace.Indent();
+                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJar2Xml);
+                                Trace.Unindent();
+
+                                Trace.WriteLine("jar = " + kvp_name_jar_info.Key);
+                                Trace.Indent();
+                                Trace.WriteLine("jar = " + kvp_name_jar_info.Value.FileNameJar);
+
+                                Trace.WriteLine("jar -tf = ");
+                                Trace.Indent();
+                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJarTF);
+                                Trace.Unindent();
+
+                                Trace.WriteLine("javap -classname " + kvp_name_jar_info.Value.FileNameJar );
+                                Trace.Indent();
+                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJarTF);
+                                Trace.Unindent();
+
+                                Trace.Indent();
+                                Trace.WriteLine("SyntaxElements = " + kvp_name_jar_info.Value.SyntaxElements?.Count);
+                                Trace.WriteLine("Packages       = " + kvp_name_jar_info.Value.Packages?.Count);
+                                Trace.WriteLine("Classes        = " + kvp_name_jar_info.Value.Classes?.Count);
+                                Trace.WriteLine("Iterfaces      = " + kvp_name_jar_info.Value.Interfaces?.Count);
+                                Trace.Unindent();
+                                Trace.Unindent();
+                            }
+                    }
+                    catch(System.Exception exc)
+                    {
+                        string msg = exc.Message;
+                        throw;
+                    }
+
+                }
+            );
+            */
+            return jar_infos;
+        }
+
+
         public string JarToGoogleAOSPFormatApiXml()
         {
             string output = null;
@@ -236,46 +322,61 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
                     error = result;
                 }
 
-
 				process.WaitForExit();
 				process.Close();
 			}
 
     		TextOutputJarTF = output;
-
-    		string[] output_lines = output.Split
-    									(
-    										new string[] 
-    										{
-    											Environment.NewLine
-    										}, 
-    										StringSplitOptions.None
-    									);
-    		Dictionary<string,string> class_x_javap_output = new Dictionary<string, string>();
-            TextOutputClassXJavaP = class_x_javap_output;
-             												
-    		foreach (string java_lang_item_jar_tf in output_lines)
-    		{
-    			if(java_lang_item_jar_tf.ToLowerInvariant().StartsWith("meta-inf"))
-    			{
-    				continue;
-    			}
-
-    			if(java_lang_item_jar_tf.ToLowerInvariant().EndsWith(".class"))
-    			{
-    				string jar_tf_class_for_javap = null;
-    				jar_tf_class_for_javap = java_lang_item_jar_tf
-    												.Replace("/",".")
-    												.Replace(".class", "")
-    												;
-    				string javap_output = JavaPClassInfo(this.FileNameJar,jar_tf_class_for_javap);
-
-    				TextOutputClassXJavaP.Add(jar_tf_class_for_javap,javap_output);
-    			}
-    		}
-
+            
 			return output;
 		}
+
+        public Dictionary<string, string> JavaPClassInfo(string jar_tf_output)
+        {
+            string[] output_jartf_array = null;
+            output_jartf_array = jar_tf_output.Split
+                                                (
+                                                    new string[] 
+                                                    {
+                                                        Environment.NewLine
+                                                    }, 
+                                                    StringSplitOptions.None
+                                                );
+
+            string[] output_lines = TextOutputJarTF.Split
+                                                        (
+                                                            new string[] 
+                                                            {
+                                                                Environment.NewLine
+                                                            }, 
+                                                            StringSplitOptions.None
+                                                        );
+            
+            TextOutputClassXJavaP = new Dictionary<string, string>();
+                                                            
+            foreach (string java_lang_item_jar_tf in output_lines)
+            {
+                if(java_lang_item_jar_tf.ToLowerInvariant().StartsWith("meta-inf"))
+                {
+                    continue;
+                }
+
+                if(java_lang_item_jar_tf.ToLowerInvariant().EndsWith(".class"))
+                {
+                    string jar_tf_class_for_javap = null;
+                    jar_tf_class_for_javap = java_lang_item_jar_tf
+                                                    .Replace("/",".")
+                                                    .Replace(".class", "")
+                                                    ;
+                    string javap_output = JavaPClassInfo(this.FileNameJar,jar_tf_class_for_javap);
+
+                    TextOutputClassXJavaP.Add(jar_tf_class_for_javap,javap_output);
+                }
+            }
+
+            return TextOutputClassXJavaP;
+        }
+
 
 		int i = 0;
 
@@ -328,96 +429,6 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 		}
 
 
-        public static List<JarInfo> AnalyseJars(List<FileInfo> file_infos)
-        {
-            List<JarInfo> jar_infos = GenerateJarInfoCollection(file_infos);
-
-            JarsInformation = jar_infos;
-
-            foreach (JarInfo ji in jar_infos)
-            {
-
-                string output_jar2xml = ji.JarToGoogleAOSPFormatApiXml();
-                string output_jartf = ji.JarTF();
-
-                ji.Dump();
-            }
-
-            /*
-            Task.Run
-            (
-                async () => 
-                {
-                    try
-                    {
-                        jar_infos = new List<JarInfo>();
-                        Dictionary<string, JarInfo> filename_jar_x_jar_info = null;
-                        filename_jar_x_jar_info = new Dictionary<string, JarInfo> ();
-
-
-
-                            string jar2xml = await jar_info.JarToGoogleAOSPFormatApiXmlAsync (filename_jar);
-                            string jar_tf_classes = jar_info.JarTFAsync (filename_jar).Result;
-                            string[] jar_tf_class_array = jar_tf_classes.Split
-                                                                            (
-                                                                                new string[] 
-                                                                                {
-                                                                                Environment.NewLine
-                                                                                }, 
-                                                                                StringSplitOptions.None
-                                                                            );
-                            foreach (string s in jar_tf_class_array)
-                            {   
-                                string java_class_info = jar_info.JavaPClassInfo (filename_jar, s).Result;
-                            }
-
-                            filename_jar_x_jar_info.Add (filename_jar, jar_info);
-
-                            foreach (KeyValuePair<string, JarInfo> kvp_name_jar_info in filename_jar_x_jar_info)
-                            {
-                                // Compile with define
-                                //      TRACE
-                                //      /d:TRACE
-
-                                Trace.WriteLine("jar2xml --jar " + kvp_name_jar_info.Value.FileNameJar );
-                                Trace.Indent();
-                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJar2Xml);
-                                Trace.Unindent();
-
-                                Trace.WriteLine("jar = " + kvp_name_jar_info.Key);
-                                Trace.Indent();
-                                Trace.WriteLine("jar = " + kvp_name_jar_info.Value.FileNameJar);
-
-                                Trace.WriteLine("jar -tf = ");
-                                Trace.Indent();
-                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJarTF);
-                                Trace.Unindent();
-
-                                Trace.WriteLine("javap -classname " + kvp_name_jar_info.Value.FileNameJar );
-                                Trace.Indent();
-                                Trace.WriteLine(kvp_name_jar_info.Value.TextOutputJarTF);
-                                Trace.Unindent();
-
-                                Trace.Indent();
-                                Trace.WriteLine("SyntaxElements = " + kvp_name_jar_info.Value.SyntaxElements?.Count);
-                                Trace.WriteLine("Packages       = " + kvp_name_jar_info.Value.Packages?.Count);
-                                Trace.WriteLine("Classes        = " + kvp_name_jar_info.Value.Classes?.Count);
-                                Trace.WriteLine("Iterfaces      = " + kvp_name_jar_info.Value.Interfaces?.Count);
-                                Trace.Unindent();
-                                Trace.Unindent();
-                            }
-                    }
-                    catch(System.Exception exc)
-                    {
-                        string msg = exc.Message;
-                        throw;
-                    }
-
-                }
-            );
-            */
-            return jar_infos;
-        }
 
         public static List<JarInfo> GenerateJarInfoCollection(List<FileInfo> file_infos)
         {
@@ -452,6 +463,8 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
                        Path.Combine(dump_folder, "jar-tf.txt") , 
                        this.TextOutputJarTF
                     );
+
+
 
             return;
         }
