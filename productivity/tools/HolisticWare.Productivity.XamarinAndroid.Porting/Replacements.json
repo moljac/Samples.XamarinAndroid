@@ -29,7 +29,7 @@
     ,
     "RadioGroup.OnCheckedChangeListener"
     :
-    "Java.Lang.Object, RadioGroup.IOnCheckedChangeListener"
+    "Moka.Lang.Object, RadioGroup.IOnCheckedChangeListener"
     ,
     "onClick(DialogInterface"
     :

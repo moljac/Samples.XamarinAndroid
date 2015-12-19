@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities.Java.Lang
+namespace Moka.Lang
 {
 	public partial class SyntaxElement
 	{
@@ -142,7 +142,7 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities.Java.Lang
 			set;
 		}
 
-		public static Java.Lang.SyntaxElement ParseJarTFOutput (string java_syntax_element)
+		public static Moka.Lang.SyntaxElement ParseJarTFOutput (string java_syntax_element)
 		{
 			string name_fully_qualified = java_syntax_element;
 			string[] name_parts = java_syntax_element.Split

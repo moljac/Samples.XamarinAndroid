@@ -7,7 +7,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-
+using Moka.Lang;
 
 namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 {
@@ -66,25 +66,25 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 			set;
 		}
         
-		public List<Java.Lang.SyntaxElement> SyntaxElements
+		public List<Moka.Lang.SyntaxElement> SyntaxElements
 		{
 			get;
 			set;
 		}
 
-		public List<Java.Lang.Class> Classes
+		public List<Moka.Lang.Class> Classes
 		{
 			get;
 			set;
 		}
 
-		public List<Java.Lang.Interface> Interfaces
+		public List<Moka.Lang.Interface> Interfaces
 		{
 			get;
 			set;
 		}
 
-		public List<Java.Lang.Package> Packages
+		public List<Moka.Lang.Package> Packages
 		{
 			get;
 			set;
@@ -108,9 +108,7 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
                 string output_jar2xml = ji.JarToGoogleAOSPFormatApiXml();
                 string output_jartf = ji.JarTF();
 
-                ji.JavaP(output_jartf);
-
-
+                Dictionary<string, string> class_parse = ji.JavaPClassInfo(output_jartf);
 
                 ji.Dump();
             }
@@ -370,13 +368,49 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
                                                     ;
                     string javap_output = JavaPClassInfo(this.FileNameJar,jar_tf_class_for_javap);
 
-                    TextOutputClassXJavaP.Add(jar_tf_class_for_javap,javap_output);
+                    TextOutputClassXJavaP.Add(jar_tf_class_for_javap, javap_output);
+
+                    List<SyntaxElement> syntax_elements = ParseJavaPClassInfo(javap_output);
                 }
             }
 
             return TextOutputClassXJavaP;
         }
 
+        public List<SyntaxElement> ParseJavaPClassInfo(string javap_output)
+        {
+            string[] lines = javap_output.Split
+                                            (
+                                 new string[]
+                {
+                    Environment.NewLine
+                }, 
+                                 StringSplitOptions.None
+                             );
+
+            Dictionary<string, string> parts = new Dictionary<string, string>();
+
+            foreach (string l in lines)
+            {
+                string compiled_from = null;
+                Class c = null;
+
+                if (l.StartsWith("Compiled from \""))
+                {
+                    string tmp = l.Replace("\"", "").Replace("Compiled from ", "");
+                    parts.Add("Compiled from", tmp);
+                }
+                if (l.Contains("class"))
+                {
+                    c = new Class(l);
+                }
+
+            }
+
+            List<SyntaxElement> list = new List<SyntaxElement>();
+
+            return list;
+        }
 
 		int i = 0;
 

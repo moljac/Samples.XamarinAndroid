@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
+namespace Moka.Lang
 {
 	public partial class Method
 	{

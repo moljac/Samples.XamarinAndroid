@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities.Java.Lang
+namespace Moka.Lang
 {
 	public partial class Package : SyntaxElement
 	{
