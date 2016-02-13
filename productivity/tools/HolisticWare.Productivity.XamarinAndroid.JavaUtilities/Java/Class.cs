@@ -70,6 +70,11 @@ namespace Moka.Lang
                                         );  
                 classname = parts_extends[0];
                 classname_super_base = parts_extends[1];
+
+                Class c = Class.ParseFullyQualifiedClassName(classname);
+                Class c_base = Class.ParseFullyQualifiedClassName(classname_super_base);
+                c.Base = c_base;
+
             }
 
             return;
@@ -110,6 +115,19 @@ namespace Moka.Lang
 			get;
 			set;
 		}
-	}
+
+        public static Class ParseFullyQualifiedClassName(string classname_fq)
+        {
+            int idx = classname_fq.LastIndexOf('.');
+            string package_name = classname_fq.Substring(0,idx+1);
+            Package package = new Package(package_name);    
+            Class c = new Class()
+            {
+                Package = package
+            };
+
+            return c;
+        } 
+  	}
 }
 

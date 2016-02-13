@@ -8,6 +8,10 @@ namespace Moka.Lang
 		{
 		}
 
+        public Package (string java_class)
+        {
+         
+        }
 
 		public static Package Parse (string java_class)
 		{

@@ -190,5 +190,97 @@
 	""
 	:
 	""
-	
+	public override void OnStop()
+    protected override void OnStop()
+    
+    public override void OnResume()
+    protected override void OnResume()
+    
+    public override void OnDestroy()
+    protected override void OnDestroy()
+    
+    finish();
+    Finish();
+    
+    Context.AUDIO_SERVICE
+    
+    AudioManager.MODE_NORMAL
+    Mode.Normal
+    
+    AudioManager.USE_DEFAULT_STREAM_TYPE
+    AudioManager.UseDefaultStreamType
+    
+    Intent.FLAG_ACTIVITY_CLEAR_TOP
+    ActivityFlags.ClearTop
+    
+    Intent.FLAG_ACTIVITY_SINGLE_TOP
+    ActivityFlags.SingleTop
+    
+    Context.BIND_AUTO_CREATE
+    Bind.AutoCreate
+    
+    Paint.ANTI_ALIAS_FLAG
+    PaintFlags.AntiAlias
+    
+    protected internal override void onDraw(
+    
+    drawCircle(
+    DrawCircle(
+    
+    centerX()
+    CenterX()
+    
+    protected internal override void onSizeChanged(
+    protected override void OnSizeChanged(
+
+    TileMode.CLAMP
+    Android.Graphics.Shader.TileMode.Clamp
+    
+    .onSizeChanged(
+    .OnSizeChanged(
+    
+    .letf
+    .Left
+    
+    .right
+    .Right
+    
+    .top
+    .Top
+    
+    .bottom
+    .Bottom
+    
+    Paint.Style.FILL
+    Paint.Style.Fill
+    
+    setIcons(
+    SetIcons(
+    
+    invalidate();
+    Invalidate();
+    
+    onTouchEvent(
+    OnTouchEvent(
+    
+    MotionEventCompat.getActionMasked(
+    MotionEventCompat.GetActionMasked(
+    
+    MotionEvent.ACTION_DOWN
+    MotionEventActions.Down
+    
+    public override void onAudioLevelUpdated(
+    public void OnAudioLevelUpdated(
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
