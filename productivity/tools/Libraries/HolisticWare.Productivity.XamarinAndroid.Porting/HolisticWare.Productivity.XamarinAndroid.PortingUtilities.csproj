@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{34EEEC9D-541F-477A-B020-4DA4855FF691}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>HolisticWare.Productivity.XamarinAndroid.Porting</RootNamespace>
@@ -46,7 +44,6 @@
     <Compile Include="Dictionary.cs" />
     <Compile Include="PorterTangibleJavaToCSharpConverter.cs" />
     <Compile Include="PorterTangibleJavaToCSharpConverter.Configuration.cs" />
-    <Compile Include="Trace.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -34,13 +34,6 @@ namespace Moka.Lang
 			set;
 		}
 
-
-		public Package Package
-		 {
-			get;
-			set;
-		}
-
 		//-------------------------------------------------------------------------
 		# region  Property string JavaPOutput w Event pre and post
 		/// <summary>
@@ -163,11 +156,13 @@ namespace Moka.Lang
 			SyntaxElement se = null;
 			if (java_syntax_element.Contains (@".class"))
 			{
-				se = new Class () {
+				se = new Class () 
+				{
 					Name = name,
 					NameFullyQualified = name_fully_qualified,
 					NameFullyQualifiedParts = name_parts,
-					Package = new Package () {
+					Package = new Package () 
+					{
 						Name = name_package,
 						NameFullyQualified = name_package,
 						NameFullyQualifiedParts = name_parts_package

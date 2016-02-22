@@ -48,6 +48,7 @@ namespace HolisticWare.Productivity.XamarinAndroid.Porting
 
 			return folder_roots;
 		}
+
 		public async Task<Dictionary<TKey, TValue>> LoadJsonAsync<TKey, TValue> (string filename)
 		{
 			StringBuilder sb = new StringBuilder ();

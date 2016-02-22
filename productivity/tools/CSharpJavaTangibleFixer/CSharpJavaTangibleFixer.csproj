@@ -2,37 +2,33 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{FE4001D7-75C1-406D-8359-8C9FFA04715A}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73FCE546-7815-47ED-BD9F-C3A28C99E8F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>JarSniffer</RootNamespace>
-    <AssemblyName>JarSniffer</AssemblyName>
+    <RootNamespace>CSharpJavaTangibleFixer</RootNamespace>
+    <AssemblyName>CSharpJavaTangibleFixer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Externalconsole>true</Externalconsole>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Externalconsole>true</Externalconsole>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -40,14 +36,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\HolisticWare.Productivity.XamarinAndroid.JavaUtilities\HolisticWare.Productivity.XamarinAndroid.JavaUtilities.csproj">
-      <Project>{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}</Project>
-      <Name>HolisticWare.Productivity.XamarinAndroid.JavaUtilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HolisticWare.Productivity.XamarinAndroid.Porting\HolisticWare.Productivity.XamarinAndroid.PortingUtilities.csproj">
-      <Project>{34EEEC9D-541F-477A-B020-4DA4855FF691}</Project>
-      <Name>HolisticWare.Productivity.XamarinAndroid.PortingUtilities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HolisticWare.Productivity.PathProber\HolisticWare.Productivity.Utilities.csproj">
       <Project>{D86F646D-015A-440C-93B7-237961D0A9D3}</Project>
       <Name>HolisticWare.Productivity.Utilities</Name>

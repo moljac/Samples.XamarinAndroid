@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F56FE713-FCF7-4443-83E9-A762AC43564B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>HarryPotterJavaAndroid</RootNamespace>

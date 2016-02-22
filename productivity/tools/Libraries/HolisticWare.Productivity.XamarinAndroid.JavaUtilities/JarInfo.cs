@@ -20,6 +20,8 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
                 "/Library/Frameworks/Xamarin.Android.framework/Versions/5.1.9-0/lib/mandroid/jar2xml.jar"
                 ;
 
+			this.Classes = new List<Class> ();
+
             return;
 		}
 
@@ -380,34 +382,39 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
         public List<SyntaxElement> ParseJavaPClassInfo(string javap_output)
         {
             string[] lines = javap_output.Split
-                                            (
+                            (
                                  new string[]
-                {
-                    Environment.NewLine
-                }, 
+						                {
+						                    Environment.NewLine
+						                }, 
                                  StringSplitOptions.None
                              );
 
             Dictionary<string, string> parts = new Dictionary<string, string>();
 
+			Class c = new Class ();
+
             foreach (string l in lines)
             {
                 string compiled_from = null;
-                Class c = null;
-
+ 
                 if (l.StartsWith("Compiled from \""))
                 {
                     string tmp = l.Replace("\"", "").Replace("Compiled from ", "");
                     parts.Add("Compiled from", tmp);
+					c.JavaPCompiledFrom = tmp;
                 }
                 if (l.Contains("class"))
                 {
-                    c = new Class(l);
+					c.ParseClassLine (l);
                 }
 
-            }
+			}
 
-            List<SyntaxElement> list = new List<SyntaxElement>();
+			List<SyntaxElement> list = new List<SyntaxElement>();
+
+			this.Classes.Add (c);
+
 
             return list;
         }
@@ -497,8 +504,16 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
                        Path.Combine(dump_folder, "jar-tf.txt") , 
                        this.TextOutputJarTF
                     );
+				
+			foreach (KeyValuePair<string, string> kvp in this.TextOutputClassXJavaP)
+			{
+				File.WriteAllText
+				(
+					Path.Combine(dump_folder, "javap-" + kvp.Key + ".txt"), 
+					kvp.Value
+				);
 
-
+			}
 
             return;
         }

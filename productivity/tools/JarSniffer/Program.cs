@@ -15,14 +15,34 @@ namespace JarSniffer
         {
             TraceSetup.Initialize(args);
 
-            Dictionary<string, List<FileInfo>> dir_find = null;
-            PathProber pp = new PathProber();
+			PathProber pp = new PathProber () 
+			{
+				FileExtensionPattern = new string[] { "*.jar" },
+				Directories = new Dictionary<string, string[]> () 
+				{ 
+					{
+						"jars during tests in project",
+						new string[] { "..", "..", "..", "Samples.Data", "jars" }
+					}, 
+					{
+						"jars in project",
+						new string[] { "..", "jars" }
+					},
+				}
+			};
+
+			Dictionary<string, List<FileInfo>> dir_find = null;
             dir_find = pp.DirectoryRootsWithFiles();
 
-            foreach (KeyValuePair<string, List<FileInfo>> kvp in dir_find)
-            {
-                List<JarInfo> jars = JarInfo.AnalyseJars(kvp.Value);
-            }
+			foreach (KeyValuePair<string, List<FileInfo>> kvp in dir_find)
+			{
+				System.Diagnostics.Trace.WriteLine (kvp.Key);
+
+				foreach (FileInfo fi in kvp.Value)
+				{
+					System.Diagnostics.Trace.WriteLine ("    file = " + fi.FullName);
+				}
+			}
 
 			return;
 		}
