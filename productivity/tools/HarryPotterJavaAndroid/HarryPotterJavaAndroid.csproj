@@ -50,7 +50,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HolisticWare.Productivity.XamarinAndroid.Porting\HolisticWare.Productivity.XamarinAndroid.PortingUtilities.csproj">
+    <ProjectReference Include="..\Libraries\HolisticWare.Productivity.XamarinAndroid.Porting\HolisticWare.Productivity.XamarinAndroid.PortingUtilities.csproj">
       <Project>{34EEEC9D-541F-477A-B020-4DA4855FF691}</Project>
       <Name>HolisticWare.Productivity.XamarinAndroid.PortingUtilities</Name>
     </ProjectReference>

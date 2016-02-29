@@ -36,7 +36,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\HolisticWare.Productivity.PathProber\HolisticWare.Productivity.Utilities.csproj">
+    <ProjectReference Include="..\Libraries\HolisticWare.Productivity.Utilities\HolisticWare.Productivity.Utilities.csproj">
       <Project>{D86F646D-015A-440C-93B7-237961D0A9D3}</Project>
       <Name>HolisticWare.Productivity.Utilities</Name>
     </ProjectReference>

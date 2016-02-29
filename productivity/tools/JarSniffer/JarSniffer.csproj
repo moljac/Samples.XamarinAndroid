@@ -40,15 +40,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\HolisticWare.Productivity.XamarinAndroid.JavaUtilities\HolisticWare.Productivity.XamarinAndroid.JavaUtilities.csproj">
+    <ProjectReference Include="..\Libraries\HolisticWare.Productivity.XamarinAndroid.JavaUtilities\HolisticWare.Productivity.XamarinAndroid.JavaUtilities.csproj">
       <Project>{6AB4CBD8-4EFD-4924-97E6-7828ACFA7E40}</Project>
       <Name>HolisticWare.Productivity.XamarinAndroid.JavaUtilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HolisticWare.Productivity.XamarinAndroid.Porting\HolisticWare.Productivity.XamarinAndroid.PortingUtilities.csproj">
+    <ProjectReference Include="..\Libraries\HolisticWare.Productivity.XamarinAndroid.Porting\HolisticWare.Productivity.XamarinAndroid.PortingUtilities.csproj">
       <Project>{34EEEC9D-541F-477A-B020-4DA4855FF691}</Project>
       <Name>HolisticWare.Productivity.XamarinAndroid.PortingUtilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HolisticWare.Productivity.PathProber\HolisticWare.Productivity.Utilities.csproj">
+    <ProjectReference Include="..\Libraries\HolisticWare.Productivity.Utilities\HolisticWare.Productivity.Utilities.csproj">
       <Project>{D86F646D-015A-440C-93B7-237961D0A9D3}</Project>
       <Name>HolisticWare.Productivity.Utilities</Name>
     </ProjectReference>
