@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-using HolisticWare.Productivity.Utilities;
+using global::HolisticWare.Productivity.Utilities;
 
 namespace ObjectiveC2CSharp
 {
