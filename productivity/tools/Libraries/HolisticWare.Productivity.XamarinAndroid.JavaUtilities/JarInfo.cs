@@ -505,6 +505,7 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
                        this.TextOutputJarTF
                     );
 				
+
 			foreach (KeyValuePair<string, string> kvp in this.TextOutputClassXJavaP)
 			{
 				File.WriteAllText

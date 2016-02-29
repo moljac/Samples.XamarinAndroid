@@ -5,9 +5,11 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
+using HolisticWare.Productivity.Utility;
+
 namespace HolisticWare.Productivity.XamarinAndroid.Porting
 {
-	public partial class PorterTangibleJavaToCSharpConverter
+	public partial class PorterTangibleJavaToCSharpConverter : ReplacementMapping
 	{
 		public Dictionary<string, string> ReplacementMapping
 		{
@@ -49,37 +51,6 @@ namespace HolisticWare.Productivity.XamarinAndroid.Porting
 			return folder_roots;
 		}
 
-		public async Task<Dictionary<TKey, TValue>> LoadJsonAsync<TKey, TValue> (string filename)
-		{
-			StringBuilder sb = new StringBuilder ();
-			using (StreamReader sr = new StreamReader (filename))
-			{
-				String line;
-				// Read and display lines from the file until the end of 
-				// the file is reached.
-				while ((line = sr.ReadLine ()) != null)
-				{
-					sb.AppendLine (line);
-				}
-			}
-			string json_content = sb.ToString ();
-			System.Json.JsonValue jv = null;
-			try
-			{
-
-				jv = System.Json.JsonValue.Parse (json_content);
-			}
-			catch (Exception exc)
-			{
-				string msg = exc.Message;
-				Trace.WriteLine("Exception JsonValue.Parse: {0}", msg);
-				throw; 
-			}
-			Dictionary<TKey, TValue> dictionary = new Dictionary<TKey, TValue> ();
-			dictionary.FromJsonValue (jv);
-
-			return dictionary;
-		}
 
 	}
 }
