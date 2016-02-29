@@ -9,7 +9,7 @@ using HolisticWare.Productivity.XamarinAndroid.JavaUtilities;
 
 namespace JarSniffer
 {
-	class MainClass
+	public partial class MainClass
 	{
 		public static void Main(string[] args)
         {
@@ -41,6 +41,17 @@ namespace JarSniffer
 				foreach (FileInfo fi in kvp.Value)
 				{
 					System.Diagnostics.Trace.WriteLine ("    file = " + fi.FullName);
+
+					JarInfo jar_info = new JarInfo () 
+					{
+						FileNameJar = fi.FullName,
+					};
+					jar_info.JarTF ();
+					jar_info.JarToGoogleAOSPFormatApiXml ();
+					jar_info.JavaPClassInfo (jar_info.TextOutputJarTF);
+
+					jar_info.Dump ();
+
 				}
 			}
 
