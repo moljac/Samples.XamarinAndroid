@@ -5,20 +5,6 @@ namespace Moka.Lang
 {
 	public partial class Package : SyntaxElement
 	{
-		string api_xml_pacakge = 
-			@"
-		<add-node path=""/api"">
-			<package name=""PLACEHOLDER_NAME_PACKAGE"">
-
-				<!-- PLACEHOLDER_INTERFACE -->
-
-				<!-- PLACEHOLDER_CLASS -->
-
-			</package>
-		</add-node>
-			";
-
-
 		public Package PackageParent
 		{
 			get;
@@ -73,13 +59,26 @@ namespace Moka.Lang
 		private const string package_namespace_normalization_template = 
 			@"
 	<attr
-		path=""/api/package[@name='$java_package_name']""
+		path=""/api/package[@name='PLACEHOLDER_NAME_PACKAGE']""
 		name=""managedName""
 		>
-		$csharp_namespace_name
+		PLACEHOLDER_NAME_NAMESPACE
 	</attr>
 			";
-		
+
+
+		string api_xml_package = 
+			@"
+		<add-node path=""/api"">
+			<package name=""PLACEHOLDER_NAME_PACKAGE"">
+
+				<!-- PLACEHOLDER_INTERFACE -->
+
+				<!-- PLACEHOLDER_CLASS -->
+
+			</package>
+		</add-node>
+			";
 	}
 }
 

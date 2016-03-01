@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using Moka.Lang;
+using System.Xml;
 
 namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 {
@@ -493,31 +494,55 @@ namespace HolisticWare.Productivity.XamarinAndroid.JavaUtilities
 
             Directory.CreateDirectory(dump_folder);
 
-            File.WriteAllText
-                    (
-                       Path.Combine(dump_folder, "jar2xml.api.xml") , 
-                       this.TextOutputJar2Xml
-                    );
+			DumpJar2XmlApiXml (dump_folder);
 
-            File.WriteAllText
-                    (
-                       Path.Combine(dump_folder, "jar-tf.txt") , 
-                       this.TextOutputJarTF
-                    );
+			DumpJarTFOutput (dump_folder);
 				
-
-			foreach (KeyValuePair<string, string> kvp in this.TextOutputClassXJavaP)
-			{
-				File.WriteAllText
-				(
-					Path.Combine(dump_folder, "javap-" + kvp.Key + ".txt"), 
-					kvp.Value
-				);
-
-			}
+			DumpJavaPClassPathOutput (dump_folder);
 
             return;
         }
+
+		void DumpJar2XmlApiXml (string dump_folder)
+		{
+			File.WriteAllText 
+				(
+					Path.Combine (dump_folder, "jar2xml.api.xml"), 
+					this.TextOutputJar2Xml
+				);
+
+			return;
+		}
+
+		void DumpJarTFOutput (string dump_folder)
+		{
+			File.WriteAllText 
+				(
+					Path.Combine (dump_folder, "jar-tf.txt"), 
+					this.TextOutputJarTF
+				);
+
+			return;
+		}
+
+		void DumpJavaPClassPathOutput (string dump_folder)
+		{
+			foreach (KeyValuePair<string, string> kvp in this.TextOutputClassXJavaP)
+			{
+				File.WriteAllText 
+					(
+						Path.Combine (dump_folder, "javap-" + kvp.Key + ".txt"), 
+						kvp.Value
+					);
+
+				File.WriteAllText 
+				(
+					Path.Combine (dump_folder, "Metadata-javap-" + kvp.Key + ".xml"),
+					kvp.Value
+				);
+			}
+		}
+
 	}
 }
 

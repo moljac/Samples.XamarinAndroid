@@ -6,6 +6,29 @@ namespace Moka.Lang
 {
 	public partial class Class : SyntaxElement
 	{
+		string api_xml_class = 
+			@"
+	<add-node
+		path=""/api/package[@name='PLACEHOLDER_NAME_PACKAGE']""
+		>
+		<class
+			abstract=""PLACEHOLDER_ABSTRACT"" static=""PLACEHOLDER_STATIC"" 
+			visibility=""PLACEHOLDER_VISIBILITY"" name=""PLACEHOLDER_NAME_CLASS""
+			deprecated=""not deprecated"" final=""false""
+			extends=""PLACEHOLDER_NAME_CLASS_BASE"" extends-generic-aware=""PLACEHOLDER_NAME_CLASS_BASE_GENERIC"" 
+			>
+			<!-- PLACEHOLDER_INTERFACE_IMPLEMENTS -->
+
+			<!-- PLACEHOLDER_FIELD -->
+
+			<!-- PLACEHOLDER_CONSTRUCTOR -->
+
+			<!-- PLACEHOLDER_METHOD -->
+
+		</class>
+	</add-node>
+			";
+
 		public Class()
 		{
 			this.JavaPOutputChanged += Class_JavaPOutputChanged;
