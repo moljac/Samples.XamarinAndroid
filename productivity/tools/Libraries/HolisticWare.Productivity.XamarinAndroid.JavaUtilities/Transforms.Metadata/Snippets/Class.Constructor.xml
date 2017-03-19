@@ -1,0 +1,14 @@
+﻿
+				<!--
+					ACCESS_MODIFIER TYPE NAME([PARAMETER, ...]);
+					EX:
+					public com.brightcove.player.view.BaseVideoView(android.content.Context, android.util.AttributeSet, int);
+				-->
+				<constructor 
+					deprecated="not deprecated" final="false" 
+					static="false" visibility="ACCESS_MODIFIER" type="TYPE" name="NAME"
+					>
+					<!-- PARAMETER -->
+				</constructor>
+				<!-- CONSTRUCTOR -->
+	

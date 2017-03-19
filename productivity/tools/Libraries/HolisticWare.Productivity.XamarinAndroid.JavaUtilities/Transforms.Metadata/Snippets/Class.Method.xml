@@ -1,0 +1,13 @@
+﻿
+				<!--
+					STATIC ABSTRACT ACCESS_MODIFIER RETURN_TYPE NAME([PARAMETER, ...]);
+					EX:
+					public boolean onTouchEvent(android.view.MotionEvent);
+				-->
+				<method
+					visibility="ACCESS_MODIFIER" abstract="ABSTRACT" static="STATIC" return="RETURN_TYPE" name="NAME"
+					deprecated="not deprecated" final="false" native="false" synchronized="false" 
+					>
+					<!-- PARAMETER -->
+				</method> 
+	

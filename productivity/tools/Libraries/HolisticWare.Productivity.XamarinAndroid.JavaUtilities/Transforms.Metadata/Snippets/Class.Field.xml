@@ -1,0 +1,17 @@
+﻿
+				<!--
+				-->
+              	<!--
+               		ACCESS_MODIFIER TYPE NAME;
+               		EX:
+					protected android.view.LayoutInflater inflater;
+                -->
+                <field 
+                        visibility="ACCESS_MODIFIER" static="false" 
+                        type="TYPE" type-generic-aware="TYPE" 
+                        name="NAME"  
+                        deprecated="not deprecated" final="false"  transient="false" volatile="false"
+                        >
+                </field>
+				<!-- FIELD -->
+	

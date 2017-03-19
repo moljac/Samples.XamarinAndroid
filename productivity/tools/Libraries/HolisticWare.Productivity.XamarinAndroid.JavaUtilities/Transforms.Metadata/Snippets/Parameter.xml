@@ -1,0 +1,12 @@
+﻿
+					<!--
+						TYPE NAME
+						EX:
+						android.view.MotionEvent p0
+					-->
+					<parameter 
+						type="TYPE"
+						name="NAME" 
+						>
+					</parameter>
+					<!-- PARAMETER -->
