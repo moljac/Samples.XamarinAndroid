@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewUrl" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewLoginFacebookOAuthAppId"
+        android:text="Login OAuth2 Facebook AppId:" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextLoginOAuth2FacebookOAuth2AppId" />
+    <TextView
+        android:text="Login OAuth2 Facebook Uri Redirect:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextLoginOAuth2FacebookOAuth2AppUriRedirect" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:text="Login Facebook OAuth2 Uri" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextLoginCustomTabsOAuth2Uri" />
+    <Button
+        android:id="@+id/buttonLoginCustomTabsOAuth2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login Custom Tabs OAuth2" />
+</LinearLayout>
